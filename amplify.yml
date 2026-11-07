@@ -1,0 +1,13 @@
+# AWS Amplify Hosting build settings for a plain static site.
+# There is nothing to build: Amplify serves the files at the repository root as-is.
+version: 1
+frontend:
+  phases:
+    build:
+      commands: []
+  artifacts:
+    baseDirectory: /
+    files:
+      - '**/*'
+  cache:
+    paths: []

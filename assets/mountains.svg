@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 56" preserveAspectRatio="none">
+  <!-- Original layered BC-ridge silhouette for the footer edge. Each layer starts and ends
+       at the same height so the 480px tile repeats seamlessly. -->
+  <path d="M0 38 40 16 68 30 114 4 154 28 184 16 228 36 280 8 318 28 352 14 398 36 440 20 480 38V56H0z" fill="#A8C29E"/>
+  <path d="M0 46 52 28 86 40 134 18 170 36 212 26 262 46 306 22 346 40 392 26 436 44 480 46V56H0z" fill="#5E7F60"/>
+  <path d="M0 50 60 40 110 48 170 36 230 48 290 38 350 48 410 40 480 50V56H0z" fill="#28352F"/>
+</svg>

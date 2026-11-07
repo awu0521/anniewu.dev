@@ -1,0 +1,9 @@
+# Private planning notes — keep out of the public repo
+plan.md
+
+# Hackathon write-up draft — keep local until it's final.
+# Anything committed at the repo root is served publicly by Amplify.
+docs/
+
+# OS / editor clutter
+.DS_Store

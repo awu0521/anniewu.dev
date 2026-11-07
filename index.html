@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Annie Wu — CS @ UBC</title>
+  <meta name="description" content="Annie Wu is a third-year Computer Science (Co-op) student at UBC who builds thoughtful systems that connect people, data, and the world outside. Includes a small, optional Debug Playground.">
+  <meta name="author" content="Annie Wu">
+  <meta name="theme-color" content="#FFF9F1">
+  <meta property="og:title" content="Annie Wu — The Portfolio You Can Debug">
+  <meta property="og:description" content="Third-year CS student at UBC. I build thoughtful systems that connect people, data, and the world outside.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Annie Wu, back to top">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        Annie Wu
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        Menu
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#superpowers">Tech Superpowers</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="nav-resume" href="Annie-Wu-Resume.pdf" target="_blank" rel="noopener">Resume<span class="visually-hidden"> (PDF, opens in a new tab)</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Computer Science (Co-op) · University of British Columbia</p>
+          <h1 id="hero-title">A little curiosity.<br>A lot of building.</h1>
+          <p class="lede">I’m Annie, a third-year Computer Science student at UBC. I build thoughtful systems that connect people, data, and the world outside.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn btn-secondary" href="Annie-Wu-Resume.pdf" target="_blank" rel="noopener">View resume<span class="visually-hidden"> (PDF, opens in a new tab)</span></a>
+          </div>
+
+          <aside class="invite" aria-labelledby="invite-title">
+            <span class="invite-bug" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="32" height="32"><rect x="10" y="9" width="12" height="16" rx="1" fill="#F5D9C6" stroke="#28352F" stroke-width="2"/><rect x="12" y="5" width="8" height="5" fill="#28352F"/><path d="M10 14H5M10 19H4M10 24H6M22 14h5M22 19h6M22 24h-4M13 5l-2-3M19 5l2-3" stroke="#28352F" stroke-width="2" fill="none" stroke-linecap="square"/><path d="M16 11v13" stroke="#28352F" stroke-width="1.5"/></svg>
+            </span>
+            <div>
+              <p class="invite-title" id="invite-title">A few tiny systems need a little help. Want to debug them with me?</p>
+              <p class="invite-sub">Three small challenges inspired by what I build. Optional — everything else on the page works without them.</p>
+              <a class="text-link" href="#playground">Open the Debug Playground <span aria-hidden="true">→</span></a>
+            </div>
+          </aside>
+        </div>
+
+        <figure class="hero-art">
+          <img src="assets/workshop.svg" width="560" height="480"
+               alt="Illustration of a small workbench by a window looking out on layered BC mountains. On the desk: an open notebook, a microcontroller board, a soccer ball, a mug, and a small cream-colored pup in a sage bandana, supervising.">
+          <figcaption>My workshop’s head of quality assurance. Very thorough. Mostly naps.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <p class="section-kicker"><span class="block-dot" aria-hidden="true"></span>01 · About me</p>
+        <h2 id="about-title">Hi, I’m Annie.</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>I’m a third-year Computer Science student in the Co-op program at the University of British Columbia. I like problems that sit between people and systems: a robot deciding who to talk to, a sensor turning a physical object into a record, a model that has to be honest about what it knows.</p>
+            <p>Right now I’m a <strong>CTMS Co-op Student at Vancouver Coastal Health Research Institute</strong>, working on research data instruments and workflows, and I’m building <strong>HATRIC</strong>, a multi-party trivia robot powered by local language and vision models.</p>
+            <p>Outside of code I’m usually reading, out on a trail somewhere in British Columbia, or playing soccer.</p>
+            <dl class="facts">
+              <div><dt>Studying</dt><dd>B.Sc. Computer Science (Co-op), UBC · Sep 2024 – Apr 2028 · 3.75 GPA</dd></div>
+              <div><dt>Coursework</dt><dd>Software Construction (CPSC 210), Data Structures &amp; Algorithms (CPSC 221), Relational Databases (CPSC 304), Applied Machine Learning (CPSC 330)</dd></div>
+              <div><dt>Based in</dt><dd>Vancouver, BC</dd></div>
+            </dl>
+          </div>
+
+          <div class="field-notes" aria-labelledby="notes-title">
+            <h3 id="notes-title" class="notes-title">Field notes <span>(things that are true about me)</span></h3>
+            <ul class="notes">
+              <li class="note note-sage">
+                <svg class="note-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h7a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h7z"/></svg>
+                <strong>Reading</strong>
+                <span>Usually somewhere in the middle of a book.</span>
+              </li>
+              <li class="note note-blue">
+                <svg class="note-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20 9 8l4 6 3-4 6 10z"/><path d="M8.2 9.4 9 8l1.4 2.1"/></svg>
+                <strong>Hiking in BC</strong>
+                <span>The reason TrackTheTrek exists.</span>
+              </li>
+              <li class="note note-peach">
+                <svg class="note-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m12 7 4 3-1.5 4.5h-5L8 10z"/></svg>
+                <strong>Soccer</strong>
+                <span>I play it — and it sneaks into my projects (see: HATRIC, FIFA 2026).</span>
+              </li>
+              <li class="note note-lavender">
+                <svg class="note-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12c0-4 3-7 8-7s8 3 8 7-3 7-8 7-8-3-8-7z"/><path d="M6 8c-2 1-3 4-2 6M18 8c2 1 3 4 2 6"/><circle cx="9.5" cy="11" r=".6"/><circle cx="14.5" cy="11" r=".6"/></svg>
+                <strong>Snoopy</strong>
+                <span>Lifelong fan. Hence the (original) pup in my workshop, who takes his supervisory role very seriously.</span>
+              </li>
+              <li class="note note-sage">
+                <svg class="note-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg>
+                <strong>Minecraft</strong>
+                <span>Responsible for the little blocks you’ll spot around this page.</span>
+              </li>
+              <li class="note note-blue">
+                <svg class="note-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="4"/><circle cx="16" cy="9" r="4"/><circle cx="12" cy="15.5" r="4"/></svg>
+                <strong>Soft colors</strong>
+                <span>You’re looking at them.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH SUPERPOWERS ============ -->
+    <section class="section section-tint" id="superpowers" aria-labelledby="superpowers-title">
+      <div class="wrap">
+        <p class="section-kicker"><span class="block-dot" aria-hidden="true"></span>02 · Tech Superpowers</p>
+        <h2 id="superpowers-title">What I can build — and where I’ve built it</h2>
+        <p class="section-intro">Grouped by the kind of problem, with the project that backs each one up.</p>
+
+        <div class="powers">
+          <article class="power power-lavender">
+            <h3>Intelligent interaction</h3>
+            <p>Orchestrating language and vision models so a system can decide <em>who</em> to address and <em>how</em>, not just what to say.</p>
+            <ul class="chips" aria-label="Technologies"><li>Python</li><li>LLM/VLM orchestration</li><li>Ollama</li><li>FastAPI</li></ul>
+            <p class="evidence">Evidence: <a href="#project-hatric">HATRIC</a></p>
+          </article>
+          <article class="power power-blue">
+            <h3>Physical-to-digital systems</h3>
+            <p>Embedded hardware that turns real-world events, like a tag passing a reader, into structured data over the network.</p>
+            <ul class="chips" aria-label="Technologies"><li>C++</li><li>ESP32</li><li>RFID</li><li>WiFi</li></ul>
+            <p class="evidence">Evidence: <a href="#project-inventory">IoT Inventory Tracker</a></p>
+          </article>
+          <article class="power power-peach">
+            <h3>Modeling and evaluation</h3>
+            <p>Building forecasts and then checking them honestly — evaluating chronologically so the model never sees the future.</p>
+            <ul class="chips" aria-label="Technologies"><li>Python</li><li>Elo ratings</li><li>Monte Carlo simulation</li></ul>
+            <p class="evidence">Evidence: <a href="#project-fifa">FIFA 2026 Tracker and Predictor</a></p>
+          </article>
+          <article class="power power-sage">
+            <h3>Application design and dependable data</h3>
+            <p>Clean object-oriented structure, data that survives a restart, and validation and workflows that keep records trustworthy.</p>
+            <ul class="chips" aria-label="Technologies"><li>Java</li><li>OOP</li><li>JSON</li><li>Validation</li><li>Workflows</li></ul>
+            <p class="evidence">Evidence: <a href="#project-trek">TrackTheTrek</a> and my <a href="#experience">co-op at VCHRI</a></p>
+          </article>
+        </div>
+
+        <div class="toolkit">
+          <h3>Also in the toolkit</h3>
+          <dl>
+            <div><dt>Languages</dt><dd>Python, Java, C++, C, JavaScript, TypeScript, SQL, R</dd></div>
+            <div><dt>Web &amp; backend</dt><dd>FastAPI, SQLite, WebSockets, React, Next.js, Expo, Firebase, HTML, CSS, Git</dd></div>
+            <div><dt>Concepts</dt><dd>LLMs, VLMs, prompt engineering, agent orchestration, OOP, client-server, embedded systems</dd></div>
+            <div><dt>Tools</dt><dd>Ollama, REDCap, Power Automate, Figma, Excel</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <p class="section-kicker"><span class="block-dot" aria-hidden="true"></span>03 · Projects</p>
+        <h2 id="projects-title">Things I’ve built (and one I’m building)</h2>
+
+        <div class="projects">
+          <article class="project" id="project-hatric" aria-labelledby="hatric-title">
+            <header class="project-head">
+              <div>
+                <h3 id="hatric-title">HATRIC: LLM/VLM Trivia Robot</h3>
+                <p class="project-meta">Oct 2026 – present</p>
+              </div>
+              <span class="status status-progress">In progress</span>
+            </header>
+            <dl class="project-body">
+              <div><dt>The problem</dt><dd>A robot hosting a game for several people has to decide who to address, where to look, and how to gesture, not just what to say.</dd></div>
+              <div><dt>What I’m doing</dt><dd>
+                <ul>
+                  <li>Building a multi-party LLM agent in async Python that hosts soccer trivia for 2–4 players, using prompt-engineered structured output to choose whom to address and to generate speech, gaze, and gesture decisions.</li>
+                  <li>Integrating an on-device vision-language model through Ollama that reads webcam frames to locate players and gauge engagement, steering the robot’s gaze.</li>
+                  <li>Orchestrating agent calls through a FastAPI/WebSocket server with SQLite, driving a web avatar and an ESP32.</li>
+                  <li>Designing for privacy (vision stays on-device) and explainability (a rationale logged for each action).</li>
+                </ul>
+              </dd></div>
+              <div><dt>Built with</dt><dd><ul class="chips"><li>Python</li><li>Ollama</li><li>FastAPI</li><li>WebSockets</li><li>SQLite</li><li>ESP32</li></ul></dd></div>
+              <div><dt>Where it stands</dt><dd>Actively in development. There’s no public repository or demo yet.</dd></div>
+            </dl>
+            <p class="project-links"><a class="text-link" href="#scenario-robot">Try a tiny turn-taking demo inspired by it <span aria-hidden="true">→</span></a></p>
+          </article>
+
+          <article class="project" id="project-inventory" aria-labelledby="inventory-title">
+            <header class="project-head">
+              <div>
+                <h3 id="inventory-title">IoT Inventory Tracker</h3>
+                <p class="project-meta">Jun – Aug 2026</p>
+              </div>
+              <span class="status status-done">Built</span>
+            </header>
+            <dl class="project-body">
+              <div><dt>The problem</dt><dd>Logging physical items by hand is slow and easy to get wrong.</dd></div>
+              <div><dt>What I did</dt><dd>Built an embedded system on an ESP32 that reads RFID tags to log items in real time, and implemented client-server communication over WiFi that turns physical events into structured records.</dd></div>
+              <div><dt>Built with</dt><dd><ul class="chips"><li>C++</li><li>Arduino</li><li>ESP32-WROOM-32</li><li>RFID</li><li>TypeScript</li></ul></dd></div>
+              <div><dt>Outcome</dt><dd>A working hardware-to-software pipeline: a tag scan becomes a structured inventory record.</dd></div>
+            </dl>
+            <p class="project-links">
+              <a class="btn btn-small" href="https://github.com/awu0521/inventory-tracker" target="_blank" rel="noopener">Source on GitHub<span class="visually-hidden">: IoT Inventory Tracker (opens in a new tab)</span></a>
+              <a class="text-link" href="#scenario-scanner">Related playground demo <span aria-hidden="true">→</span></a>
+            </p>
+          </article>
+
+          <article class="project" id="project-fifa" aria-labelledby="fifa-title">
+            <header class="project-head">
+              <div>
+                <h3 id="fifa-title">FIFA 2026 Tracker and Predictor</h3>
+                <p class="project-meta">Jun – Jul 2026</p>
+              </div>
+              <span class="status status-done">Built</span>
+            </header>
+            <dl class="project-body">
+              <div><dt>The problem</dt><dd>Forecasting the 2026 World Cup winner from a small amount of in-tournament data, without fooling myself about accuracy.</dd></div>
+              <div><dt>What I did</dt><dd>Built a Python engine that rates teams with Elo (seeded from pre-tournament FIFA rankings, with heavier weighting for knockout matches) and runs 200,000 Monte Carlo simulations of the remaining bracket.</dd></div>
+              <div><dt>Built with</dt><dd><ul class="chips"><li>Python</li><li>Elo ratings</li><li>Monte Carlo simulation</li></ul></dd></div>
+              <div><dt>How I checked it</dt><dd>
+                <p class="stat"><span class="stat-num">83.8%</span> <span class="stat-label">of decisive matches called correctly in a chronological backtest (67 of 80)</span></p>
+                <p class="fine">The backtest walks through the 2026 tournament’s matches in date order. Before each match, the team with the higher Elo rating is the prediction; only after the result is checked are the ratings updated, so no prediction uses future results. Draws are excluded, which leaves 80 decisive matches.</p>
+              </dd></div>
+            </dl>
+            <p class="project-links"><a class="btn btn-small" href="https://github.com/awu0521/fifa2026" target="_blank" rel="noopener">Source on GitHub<span class="visually-hidden">: FIFA 2026 Tracker and Predictor (opens in a new tab)</span></a></p>
+          </article>
+
+          <article class="project" id="project-trek" aria-labelledby="trek-title">
+            <header class="project-head">
+              <div>
+                <h3 id="trek-title">TrackTheTrek</h3>
+                <p class="project-meta">Jul – Sep 2025</p>
+              </div>
+              <span class="status status-done">Built</span>
+            </header>
+            <dl class="project-body">
+              <div><dt>The problem</dt><dd>I wanted a simple way to keep track of the hikes I do around BC.</dd></div>
+              <div><dt>What I did</dt><dd>Built a Java desktop hiking tracker around an object-oriented class hierarchy, with hikes saved to and loaded from JSON so the data persists between sessions.</dd></div>
+              <div><dt>Built with</dt><dd><ul class="chips"><li>Java</li><li>OOP</li><li>JSON persistence</li></ul></dd></div>
+              <div><dt>Outcome</dt><dd>A desktop app whose trail log is still there the next time it opens.</dd></div>
+            </dl>
+            <p class="project-links">
+              <a class="btn btn-small" href="https://github.com/awu0521/TrackTheTrek" target="_blank" rel="noopener">Source on GitHub<span class="visually-hidden">: TrackTheTrek (opens in a new tab)</span></a>
+              <a class="text-link" href="#scenario-journal">Related playground demo <span aria-hidden="true">→</span></a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEBUG PLAYGROUND ============ -->
+    <section class="section playground" id="playground" aria-labelledby="playground-title">
+      <div class="wrap">
+        <p class="section-kicker"><span class="block-dot" aria-hidden="true"></span>04 · Debug Playground</p>
+        <h2 id="playground-title">A few tiny systems need a little help.</h2>
+        <div class="pg-intro">
+          <div>
+            <p class="section-intro">Want to debug them with me? Three small challenges inspired by what I build. Each one starts with a flawed rule. Change the rule, run it again, and watch the behavior change.</p>
+            <p class="disclaimer"><strong>Honest label:</strong> these are simplified demonstrations inspired by my projects. They are not reconstructions of real bugs from those projects, and none of them run my actual project code.</p>
+          </div>
+          <div class="pg-progress" aria-labelledby="pg-progress-label">
+            <p id="pg-progress-label" class="pg-progress-label"><span data-fixed-count>0</span> of 3 fixed</p>
+            <ol class="pg-chips">
+              <li><a href="#scenario-scanner" data-chip="scanner"><span class="chip-box" aria-hidden="true"></span>The scanner<span class="visually-hidden" data-chip-state> (not fixed yet)</span></a></li>
+              <li><a href="#scenario-journal" data-chip="journal"><span class="chip-box" aria-hidden="true"></span>The trail journal<span class="visually-hidden" data-chip-state> (not fixed yet)</span></a></li>
+              <li><a href="#scenario-robot" data-chip="robot"><span class="chip-box" aria-hidden="true"></span>The trivia robot<span class="visually-hidden" data-chip-state> (not fixed yet)</span></a></li>
+            </ol>
+            <a class="text-link skip-pg" href="#experience">Skip the playground <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <noscript><p class="pg-error">The playground needs JavaScript. Everything else on this page works without it.</p></noscript>
+
+        <!-- Scenario A -->
+        <article class="scenario" id="scenario-scanner" aria-labelledby="scanner-title" data-scenario="scanner">
+          <header class="scenario-head">
+            <p class="scenario-num">Bug 1 · inspired by the <a href="#project-inventory">IoT Inventory Tracker</a></p>
+            <h3 id="scanner-title">“The scanner has déjà vu.”</h3>
+            <p class="scenario-problem">A reader often sees the same tag several times in a row: the tag lingers, or the reader stutters. Right now, every one of those detections becomes a new inventory entry, so one object shows up as several.</p>
+          </header>
+
+          <div class="scenario-grid">
+            <div class="scenario-controls controls-run">
+              <fieldset>
+                <legend>1. Pick a (fictional) tagged object</legend>
+                <div class="radio-list" data-tag-list></div>
+              </fieldset>
+
+              <div class="control-row">
+                <button class="btn btn-primary" type="button" data-action="scan">Scan tag</button>
+                <button class="btn btn-secondary" type="button" data-action="stutter">Reader stutter <span class="btn-note">(3 detections)</span></button>
+              </div>
+
+            </div>
+
+            <div class="scenario-output">
+              <div class="scanner-device" data-scanner-device aria-hidden="true">
+                <span class="scanner-light"></span>
+                <span class="scanner-label" data-scanner-readout>READY</span>
+              </div>
+              <div class="split-logs">
+                <section class="log" aria-labelledby="raw-title">
+                  <h4 id="raw-title">Raw detections <span class="count" data-raw-count>0</span></h4>
+                  <p class="log-hint">What the reader saw</p>
+                  <ol class="log-list mono" data-raw-log><li class="log-empty">No detections yet.</li></ol>
+                </section>
+                <section class="log" aria-labelledby="inv-title">
+                  <h4 id="inv-title">Inventory entries <span class="count" data-inv-count>0</span></h4>
+                  <p class="log-hint">What got recorded</p>
+                  <ol class="log-list mono" data-inv-log><li class="log-empty">No entries yet.</li></ol>
+                </section>
+              </div>
+              <div class="compare" data-compare aria-label="Before and after comparison"></div>
+              <p class="feedback" data-feedback role="status" aria-live="polite"></p>
+            </div>
+
+            <div class="scenario-controls controls-rule">
+              <fieldset>
+                <legend>2. Choose the recording rule</legend>
+                <div class="radio-list">
+                  <label class="radio"><input type="radio" name="scanner-rule" value="every" checked> <span><strong>Record every scan</strong><small>Each detection becomes an entry.</small></span></label>
+                  <label class="radio"><input type="radio" name="scanner-rule" value="dedupe"> <span><strong>Ignore repeats within 2 seconds</strong><small>A detection is accepted only if the same tag has no accepted entry in the last 2.0 s.</small></span></label>
+                </div>
+              </fieldset>
+
+              <button class="btn btn-ghost" type="button" data-action="reset">Reset this demo</button>
+            
+            </div>
+          </div>
+
+          <details class="explain">
+            <summary>What’s going on here? (the engineering note)</summary>
+            <p>This is <strong>event handling with duplicate suppression</strong>. A sensor reports <em>detections</em>; the application decides which detections are meaningful <em>events</em>. The fixed rule keeps a timestamp of each tag’s last accepted entry and drops any detection of that same tag within a 2-second window. A different tag is never blocked, and the same tag scanned again after the window is recorded as a new entry.</p>
+            <p>Real systems choose this trade-off carefully. A window that’s too short lets duplicates through; one that’s too long can swallow a legitimate re-scan. Some systems track check-in/check-out state instead. This demo only illustrates the idea; it doesn’t reproduce my tracker’s implementation.</p>
+            <p><a href="#project-inventory">Read about the IoT Inventory Tracker</a> · <a href="https://github.com/awu0521/inventory-tracker" target="_blank" rel="noopener">Its source on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+          </details>
+        </article>
+
+        <!-- Scenario B -->
+        <article class="scenario" id="scenario-journal" aria-labelledby="journal-title" data-scenario="journal">
+          <header class="scenario-head">
+            <p class="scenario-num">Bug 2 · inspired by <a href="#project-trek">TrackTheTrek</a></p>
+            <h3 id="journal-title">“The trail journal forgot the hike.”</h3>
+            <p class="scenario-problem">You log a hike, close the journal, and open it again… and the hike is gone. The journal only keeps entries in temporary memory, which disappears when the app closes.</p>
+          </header>
+
+          <div class="scenario-grid">
+            <div class="scenario-controls controls-run">
+              <form class="journal-form" data-journal-form novalidate>
+                <fieldset>
+                  <legend>1. Log a fictional hike</legend>
+                  <label class="field">
+                    <span>Trail name</span>
+                    <input type="text" name="trail" maxlength="48" autocomplete="off" required placeholder="e.g. Mossy Switchback Loop" data-trail-input>
+                  </label>
+                  <label class="field field-small">
+                    <span>Distance (km, optional)</span>
+                    <input type="number" name="km" min="0.1" max="99" step="0.1" inputmode="decimal" placeholder="4.2">
+                  </label>
+                  <p class="field-error" data-form-error hidden></p>
+                  <div class="control-row">
+                    <button class="btn btn-primary" type="submit">Add hike</button>
+                    <button class="btn btn-secondary" type="button" data-action="suggest">Suggest a trail name</button>
+                  </div>
+                </fieldset>
+              </form>
+
+              <div class="control-row">
+                <button class="btn btn-primary btn-reopen" type="button" data-action="reopen">Close and reopen journal</button>
+              </div>
+
+            </div>
+
+            <div class="scenario-output">
+              <div class="journal" data-journal>
+                <div class="journal-cover" aria-hidden="true">
+                  <span>Trail Journal</span>
+                </div>
+                <div class="journal-page">
+                  <h4 class="journal-heading">Trail journal <span class="journal-state" data-journal-state>open</span></h4>
+                  <ol class="journal-list" data-journal-list><li class="log-empty">No hikes logged yet.</li></ol>
+                </div>
+              </div>
+              <div class="storage-view">
+                <h4>What’s in this browser’s storage</h4>
+                <p class="log-hint">Key <code>annie-portfolio:debug-journal:v1</code></p>
+                <pre class="mono" data-storage-view>(nothing stored)</pre>
+              </div>
+              <div class="compare" data-compare aria-label="Before and after comparison"></div>
+              <p class="feedback" data-feedback role="status" aria-live="polite"></p>
+            </div>
+
+            <div class="scenario-controls controls-rule">
+              <fieldset>
+                <legend>2. Choose where the journal keeps its memory</legend>
+                <div class="radio-list">
+                  <label class="radio"><input type="radio" name="journal-mode" value="temporary" checked> <span><strong>Temporary memory</strong><small>Entries live only while the journal is open.</small></span></label>
+                  <label class="radio"><input type="radio" name="journal-mode" value="persistent" data-persistent-radio> <span><strong>Save to this browser</strong><small>Entries are written to localStorage and read back on reopen.</small></span></label>
+                </div>
+                <p class="storage-warning" data-storage-warning hidden></p>
+              </fieldset>
+
+              <button class="btn btn-ghost" type="button" data-action="reset">Reset this demo</button>
+            
+            </div>
+          </div>
+
+          <details class="explain">
+            <summary>What’s going on here? (the engineering note)</summary>
+            <p>This is about <strong>where state lives</strong>. In temporary mode the entries exist only in a JavaScript variable, so “reopening” starts with fresh, empty memory. In persistent mode, every change is serialized to JSON and written to <code>localStorage</code>, and reopening reads it back and validates it before showing it. Because it’s real storage, your hike is still here even if you reload the whole page.</p>
+            <p>This browser demo uses <code>localStorage</code>. The actual TrackTheTrek project is a Java desktop app that persists hikes to a JSON file, which is the same idea in a different environment. “Reset this demo” deletes only this demo’s storage keys. If your browser blocks storage, the persistent option is turned off and the rest of the page works normally.</p>
+            <p><a href="#project-trek">Read about TrackTheTrek</a> · <a href="https://github.com/awu0521/TrackTheTrek" target="_blank" rel="noopener">Its source on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+          </details>
+        </article>
+
+        <!-- Scenario C -->
+        <article class="scenario" id="scenario-robot" aria-labelledby="robot-title" data-scenario="robot">
+          <header class="scenario-head">
+            <p class="scenario-num">Bug 3 · inspired by <a href="#project-hatric">HATRIC</a></p>
+            <h3 id="robot-title">“Everyone deserves a turn.”</h3>
+            <p class="scenario-problem">A trivia robot is hosting three players. Its turn-taking rule always picks whoever sits in Seat 1, so one person answers every question while the others wait. It even asks Seat 1 when nobody is sitting there.</p>
+          </header>
+
+          <div class="scenario-grid">
+            <div class="scenario-controls controls-run">
+              <fieldset>
+                <legend>1. Who’s at the table? <span class="legend-note">(fictional players)</span></legend>
+                <div class="check-list" data-player-toggles></div>
+              </fieldset>
+
+              <div class="control-row">
+                <button class="btn btn-primary" type="button" data-action="turn">Run 1 turn</button>
+                <button class="btn btn-secondary" type="button" data-action="turns">Run 6 turns</button>
+              </div>
+
+            </div>
+
+            <div class="scenario-output">
+              <div class="table-scene">
+                <svg class="robot-scene" viewBox="0 0 360 300" role="img" aria-labelledby="robot-scene-title">
+                  <title id="robot-scene-title">An original illustrated robot sitting behind a round table, with three fictional players: Juniper in seat 1 on the left, Ollie in seat 2 at the front, and Sam in seat 3 on the right.</title>
+                  <!-- robot (drawn first so the table hides its base) -->
+                  <g class="robot" data-robot>
+                    <rect x="150" y="116" width="60" height="64" rx="6" fill="#DCECF4" stroke="#28352F" stroke-width="2.5"/>
+                    <rect x="164" y="128" width="32" height="16" rx="2" fill="#FFF9F1" stroke="#28352F" stroke-width="2"/>
+                    <g class="robot-head" data-robot-head>
+                      <rect x="140" y="58" width="80" height="56" rx="8" fill="#E9E1F3" stroke="#28352F" stroke-width="2.5"/>
+                      <rect x="150" y="68" width="60" height="36" rx="4" fill="#28352F"/>
+                      <g data-robot-eyes>
+                        <rect x="160" y="80" width="12" height="12" rx="1" fill="#DCECF4"/>
+                        <rect x="188" y="80" width="12" height="12" rx="1" fill="#DCECF4"/>
+                      </g>
+                      <line x1="180" y1="58" x2="180" y2="44" stroke="#28352F" stroke-width="2.5"/>
+                      <rect x="173" y="34" width="14" height="12" fill="#F5D9C6" stroke="#28352F" stroke-width="2"/>
+                    </g>
+                  </g>
+                  <ellipse cx="180" cy="190" rx="134" ry="36" fill="#DCE8D6"/>
+                  <ellipse cx="180" cy="184" rx="134" ry="36" fill="#EEF4EA" stroke="#28352F" stroke-width="2"/>
+                  <rect x="196" y="172" width="16" height="12" fill="#F5D9C6" stroke="#28352F" stroke-width="1.5" transform="rotate(-8 204 178)"/>
+                  <!-- players -->
+                  <g class="seat" data-seat="0" transform="translate(50 196)">
+                    <circle r="24" fill="#F5D9C6" stroke="#28352F" stroke-width="2"/>
+                    <rect x="-18" y="-26" width="36" height="12" fill="#28352F"/>
+                    <circle cx="-7" cy="-2" r="2.5" fill="#28352F"/><circle cx="7" cy="-2" r="2.5" fill="#28352F"/>
+                    <path d="M-6 8q6 5 12 0" stroke="#28352F" stroke-width="2" fill="none"/>
+                    <text y="44" text-anchor="middle" class="seat-label">1 · Juniper</text>
+                  </g>
+                  <g class="seat" data-seat="1" transform="translate(180 244)">
+                    <circle r="24" fill="#E9E1F3" stroke="#28352F" stroke-width="2"/>
+                    <rect x="-20" y="-24" width="40" height="10" fill="#6B4E3D"/><rect x="-20" y="-14" width="8" height="12" fill="#6B4E3D"/><rect x="12" y="-14" width="8" height="12" fill="#6B4E3D"/>
+                    <circle cx="-7" cy="-2" r="2.5" fill="#28352F"/><circle cx="7" cy="-2" r="2.5" fill="#28352F"/>
+                    <path d="M-6 8q6 5 12 0" stroke="#28352F" stroke-width="2" fill="none"/>
+                    <text y="44" text-anchor="middle" class="seat-label">2 · Ollie</text>
+                  </g>
+                  <g class="seat" data-seat="2" transform="translate(310 196)">
+                    <circle r="24" fill="#DCECF4" stroke="#28352F" stroke-width="2"/>
+                    <rect x="-16" y="-26" width="32" height="10" fill="#C98F5E"/><rect x="10" y="-18" width="10" height="10" fill="#C98F5E"/>
+                    <circle cx="-7" cy="-2" r="2.5" fill="#28352F"/><circle cx="7" cy="-2" r="2.5" fill="#28352F"/>
+                    <path d="M-6 8q6 5 12 0" stroke="#28352F" stroke-width="2" fill="none"/>
+                    <text y="44" text-anchor="middle" class="seat-label">3 · Sam</text>
+                  </g>
+                </svg>
+                <p class="speech" data-speech>Hi! I’m a pretend trivia host. Press “Run 1 turn” to ask a question.</p>
+              </div>
+              <ul class="turn-bars" data-turn-bars aria-label="Turns per player"></ul>
+              <div class="compare" data-compare aria-label="Before and after comparison"></div>
+              <p class="feedback" data-feedback role="status" aria-live="polite"></p>
+            </div>
+
+            <div class="scenario-controls controls-rule">
+              <fieldset>
+                <legend>2. Choose the selection rule</legend>
+                <div class="radio-list">
+                  <label class="radio"><input type="radio" name="robot-rule" value="first" checked> <span><strong>Always pick Seat 1</strong><small>Ignores who’s at the table and how many turns anyone has had.</small></span></label>
+                  <label class="radio"><input type="radio" name="robot-rule" value="fair"> <span><strong>Fewest turns first</strong><small>Picks a player at the table with the fewest turns. Ties go to whoever has waited longest, then to the lowest seat number.</small></span></label>
+                </div>
+              </fieldset>
+
+              <button class="btn btn-ghost" type="button" data-action="reset">Reset this demo</button>
+            
+            </div>
+          </div>
+
+          <details class="explain">
+            <summary>What’s going on here? (the engineering note)</summary>
+            <p>This is a <strong>selection rule</strong>: given the current state (who’s present and how many turns each has had), pick the next person to address. The flawed rule is a constant: it returns Seat 1 no matter what. The fixed rule filters to eligible players, sorts by fewest turns, breaks ties by longest wait and then seat number, and takes the first result. Because the tie-break is deterministic, the same state always produces the same choice, which also makes the behavior easy to explain and test.</p>
+            <p>This is a scripted simulation. It is not a live language model and not a reproduction of HATRIC, where these decisions come from an LLM agent working with vision input. It just shows why “who hasn’t spoken yet?” is worth encoding explicitly.</p>
+            <p><a href="#project-hatric">Read about HATRIC</a></p>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section section-tint" id="experience" aria-labelledby="experience-title">
+      <div class="wrap">
+        <p class="section-kicker"><span class="block-dot" aria-hidden="true"></span>05 · Experience &amp; Community</p>
+        <h2 id="experience-title">Where I’ve been building with people</h2>
+
+        <ol class="timeline">
+          <li class="role">
+            <div class="role-when">Sep 2026 – present</div>
+            <div class="role-card">
+              <h3>CTMS Co-op Student</h3>
+              <p class="role-org">Vancouver Coastal Health Research Institute · Vancouver, BC</p>
+              <ul>
+                <li>Design and validate REDCap data collection instruments, building field validation and data dictionaries to support data quality across 100+ studies.</li>
+                <li>Configure study sites in the Clinical Trial Management System, structuring study data and workflows, and automate multi-step processes with Power Automate.</li>
+                <li>Map data requirements and workflows for a new financial tracking module, and lead user training that turns technical workflows into clear guidance.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="role">
+            <div class="role-when">Sep 2025 – present</div>
+            <div class="role-card">
+              <h3>Social Coordinator</h3>
+              <p class="role-org">UBC Computer Science Student Society · Vancouver, BC</p>
+              <ul>
+                <li>Plan and run three social events each term for a community of 3.4k+ CS students, managing logistics, budgets, and vendors.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="role">
+            <div class="role-when">May – Jun 2025</div>
+            <div class="role-card">
+              <h3>Bootcamp Volunteer</h3>
+              <p class="role-org">GIRLsmarts4tech · Vancouver, BC</p>
+              <ul>
+                <li>Taught JavaScript, Python, and HTML in weekly sessions for middle school students building their first websites.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="section-kicker"><span class="block-dot" aria-hidden="true"></span>06 · Contact</p>
+          <h2 id="contact-title">Let’s build something thoughtful.</h2>
+          <p class="section-intro">I’m happy to talk about co-op and internship roles, projects, or a good trail. Email is the best way to reach me.</p>
+        </div>
+        <ul class="contact-list">
+          <li><a class="contact-item" href="mailto:annie.wu2024@gmail.com"><span class="contact-kind">Email</span><span class="contact-value">annie.wu2024@gmail.com</span></a></li>
+          <li><a class="contact-item" href="https://linkedin.com/in/annie-wu06" target="_blank" rel="noopener"><span class="contact-kind">LinkedIn</span><span class="contact-value">linkedin.com/in/annie-wu06</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <li><a class="contact-item" href="https://github.com/awu0521" target="_blank" rel="noopener"><span class="contact-kind">GitHub</span><span class="contact-value">github.com/awu0521</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <li class="contact-resume">
+            <span class="contact-kind">Resume</span>
+            <span class="contact-actions">
+              <a class="btn btn-small" href="Annie-Wu-Resume.pdf" target="_blank" rel="noopener">View resume<span class="visually-hidden"> (PDF, opens in a new tab)</span></a>
+              <a class="btn btn-small btn-secondary" href="Annie-Wu-Resume.pdf" download="Annie-Wu-Resume.pdf">Download resume<span class="visually-hidden"> (PDF)</span></a>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="mountains" aria-hidden="true"></div>
+    <div class="wrap footer-inner">
+      <ul class="footer-links">
+        <li><a href="https://github.com/awu0521" target="_blank" rel="noopener">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://linkedin.com/in/annie-wu06" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://github.com/awu0521/anniewu.dev" target="_blank" rel="noopener">This site’s source<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="#top">Back to top</a></li>
+      </ul>
+      <!-- Update this note after the Amplify deployment is verified. -->
+      <p class="footer-note">Hand-built with plain HTML, CSS, and JavaScript: no frameworks and no build step. Set up for hosting on AWS Amplify Hosting.</p>
+      <p class="footer-note">© 2026 Annie Wu · Illustrations are original to this site.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
