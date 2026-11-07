@@ -1,23 +1,32 @@
 # Annie Wu — The Portfolio You Can Debug
 
-My personal portfolio for the AWS Student Builder Challenge. It is a calm, ordinary portfolio (About, Tech Superpowers, Projects, Experience, Contact, resume) with one optional extra: a **Debug Playground** with three small interactive scenarios inspired by my projects.
+My personal portfolio for the AWS Student Builder Challenge. It is a calm, ordinary portfolio (About, Tech Superpowers, Projects, Experience, Contact, resume) with one optional extra: a **Debug Playground**, three small illustrated interactive scenarios inspired by my projects. The playground lives on its own pages (`playground/`) and opens in a new window from the portfolio.
 
 - Built with plain HTML, CSS, and JavaScript: no frameworks, packages, build step, backend, or paid APIs.
-- The portfolio itself is plain HTML with anchor links and works without JavaScript. The playground is progressive enhancement, and each demo runs in its own error boundary so it can't break navigation.
+- The portfolio itself is plain HTML with anchor links and works without JavaScript. The playground is separate, and each demo runs in its own error boundary.
 - Illustrations are original SVGs in `assets/`.
 
 ## Project structure
 
 ```
-index.html            ← must stay at the repository root
-styles.css
-script.js
+index.html            ← the portfolio; must stay at the repository root
+styles.css            ← shared by every page
+script.js             ← shared by every page
+playground/
+  index.html          ← Debug Playground hub
+  scanner.html        ← Bug 1: "The scanner has déjà vu."
+  journal.html        ← Bug 2: "The trail journal forgot the hike."
+  robot.html          ← Bug 3: "Everyone deserves a turn."
 amplify.yml           ← Amplify build settings: no build, serve the repo root
 Annie-Wu-Resume.pdf
 assets/
-  workshop.svg        ← hero illustration
   mountains.svg       ← footer ridge
+  pg-scanner.svg      ← playground card thumbnails
+  pg-journal.svg
+  pg-robot.svg
   favicon.svg
+  photos/             ← field-note photos (resized, location data removed)
+    oli.jpg  chief.jpg  snowboard.jpg  fifa.jpg
 README.md
 ```
 
@@ -50,18 +59,19 @@ Upload these files and folders and **keep the structure exactly as shown**, with
 3. `script.js`
 4. `amplify.yml`
 5. `Annie-Wu-Resume.pdf`
-6. the whole `assets/` folder (`workshop.svg`, `mountains.svg`, `favicon.svg`)
-7. `README.md` and `.gitignore`
+6. the whole `assets/` folder (five `.svg` files plus the `photos/` folder with four `.jpg` files)
+7. the whole `playground/` folder (`index.html`, `scanner.html`, `journal.html`, `robot.html`)
+8. `README.md` and `.gitignore`
 
 **Using git:**
 
 ```bash
-git add index.html styles.css script.js amplify.yml Annie-Wu-Resume.pdf assets README.md .gitignore
+git add index.html styles.css script.js amplify.yml Annie-Wu-Resume.pdf assets playground README.md .gitignore
 git commit -m "Build portfolio"
 git push origin main
 ```
 
-**Using the GitHub website:** open the repository → **Add file → Upload files** → drag in the files and the `assets` folder → **Commit changes**. Afterwards, confirm that `index.html` appears on the repository's front page.
+**Using the GitHub website:** open the repository → **Add file → Upload files** → drag in the files and the `assets` and `playground` folders → **Commit changes**. Afterwards, confirm that `index.html` appears on the repository's front page and that `playground/` contains four pages.
 
 Don't upload `plan.md`, `docs/`, `CLAUDE.md`, `AGENTS.md`, or `.cursor/`.
 
@@ -92,9 +102,11 @@ Check these on the live `amplifyapp.com` URL, not on localhost:
 - [ ] Each header link (About, Tech Superpowers, Projects, Experience, Contact) jumps to its section, and **Resume** opens the PDF.
 - [ ] **View resume** and **Download resume** both work.
 - [ ] The GitHub, LinkedIn, project repository, and "This site's source" links open correctly.
-- [ ] Scanner: scanning with "Record every scan" makes duplicates. Switching to "Ignore repeats within 2 seconds" and scanning again suppresses them.
-- [ ] Journal: in temporary mode, a hike disappears after **Close and reopen**. In "Save to this browser" mode, it stays, even after you reload the page. **Reset this demo** clears it.
-- [ ] Robot: "Always pick Seat 1" gives Seat 1 every turn. "Fewest turns first" evens the counts out.
+- [ ] **Open the Debug Playground** opens the playground in a new window, and "Back to portfolio" returns.
+- [ ] Scanner page: with "Record every scan", the same object lands on the shelf several times. After switching to "Ignore repeats within 2 seconds", repeats show as crossed-out squares on the detection strip and nothing new lands on the shelf.
+- [ ] Journal page: in temporary mode, a hike disappears after **Close and reopen**. In "Save to this browser" mode, it stays (the chest shows the saved count), even after you reload the page. **Reset this demo** clears it.
+- [ ] Robot page: "Always pick Seat 1" gives Seat 1 every turn. "Fewest turns first" evens the counts out.
+- [ ] The step chips and the hub show which bugs you've fixed.
 - [ ] On a phone: the menu opens and closes, nothing scrolls sideways, and the demos work by tapping.
 - [ ] The browser console (DevTools → Console) shows no errors.
 - [ ] After it's verified, update the footer note in `index.html` (search for "Update this note") to say the site is hosted on AWS Amplify Hosting.

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Debug Playground · Annie Wu</title>
+  <meta name="description" content="Annie Wu's Debug Playground: three tiny interactive systems, inspired by her projects, that need a little help.">
+  <meta name="theme-color" content="#FFF9F1">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=20261107l">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="pg-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html" aria-label="Annie Wu, back to the portfolio">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        Annie Wu
+      </a>
+      <a class="btn btn-small btn-secondary" href="../index.html"><span aria-hidden="true">←</span> Back to portfolio</a>
+    </div>
+  </header>
+
+  <nav class="pg-subnav" aria-label="Debug Playground">
+    <div class="wrap pg-subnav-inner">
+      <a class="pg-home" href="index.html" aria-current="page">Debug Playground</a>
+      <ol class="pg-steps">
+        <li><a href="scanner.html" data-chip="scanner"><span class="chip-box" aria-hidden="true"></span>1 · Scanner<span class="visually-hidden" data-chip-state> (not fixed yet)</span></a></li>
+        <li><a href="journal.html" data-chip="journal"><span class="chip-box" aria-hidden="true"></span>2 · Journal<span class="visually-hidden" data-chip-state> (not fixed yet)</span></a></li>
+        <li><a href="robot.html" data-chip="robot"><span class="chip-box" aria-hidden="true"></span>3 · Robot<span class="visually-hidden" data-chip-state> (not fixed yet)</span></a></li>
+      </ol>
+      <p class="pg-count"><span data-fixed-count>0</span> of 3 fixed</p>
+    </div>
+  </nav>
+
+  <main id="main" tabindex="-1" class="pg-main">
+    <div class="wrap">
+      <header class="pg-hub-head">
+        <p class="section-kicker"><span class="block-dot" aria-hidden="true"></span>Debug Playground</p>
+        <h1>A few tiny systems need a little help.</h1>
+        <p class="section-intro">Want to debug them with me? Three small challenges inspired by what I build. Each one starts with a flawed rule: change the rule, run it again, and watch what changes.</p>
+        <p class="disclaimer"><strong>Honest label:</strong> these are simplified demonstrations inspired by my projects. They are not reconstructions of real bugs from those projects, and none of them run my actual project code.</p>
+      </header>
+      <ol class="pg-cards" aria-label="The three bugs">
+          <li class="pg-card">
+            <img src="../assets/pg-scanner.svg" width="320" height="200" alt="Illustration: a water bottle at an RFID reader, with the same bottle on the inventory shelf three times.">
+            <div class="pg-card-body">
+              <p class="scenario-num">Bug 1 · inspired by IoT Inventory Tracker</p>
+              <h2><a href="scanner.html">“The scanner has déjà vu.”</a></h2>
+              <p>One object keeps showing up on the inventory shelf. Teach the reader to ignore repeats.</p>
+              <p class="pg-card-foot"><span class="status-badge" data-status="scanner">Not fixed yet</span> <span class="pg-card-cta" aria-hidden="true">Start debugging →</span></p>
+            </div>
+          </li>
+          <li class="pg-card">
+            <img src="../assets/pg-journal.svg" width="320" height="200" alt="Illustration: an open trail journal, a thought cloud, and a storage chest.">
+            <div class="pg-card-body">
+              <p class="scenario-num">Bug 2 · inspired by TrackTheTrek</p>
+              <h2><a href="journal.html">“The trail journal forgot the hike.”</a></h2>
+              <p>Every hike vanishes when the journal closes. Give it a memory that lasts.</p>
+              <p class="pg-card-foot"><span class="status-badge" data-status="journal">Not fixed yet</span> <span class="pg-card-cta" aria-hidden="true">Start debugging →</span></p>
+            </div>
+          </li>
+          <li class="pg-card">
+            <img src="../assets/pg-robot.svg" width="320" height="200" alt="Illustration: a blocky robot at a round table looking at one of three players.">
+            <div class="pg-card-body">
+              <p class="scenario-num">Bug 3 · inspired by HATRIC</p>
+              <h2><a href="robot.html">“Everyone deserves a turn.”</a></h2>
+              <p>A trivia robot only ever talks to Seat 1. Help it notice who hasn’t spoken.</p>
+              <p class="pg-card-foot"><span class="status-badge" data-status="robot">Not fixed yet</span> <span class="pg-card-cta" aria-hidden="true">Start debugging →</span></p>
+            </div>
+          </li>
+      </ol>
+      <p class="pg-hub-foot">Rather see the real work? <a href="../index.html#projects">Go to my projects</a> or <a href="../Annie-Wu-Resume.pdf" target="_blank" rel="noopener">open my resume<span class="visually-hidden"> (PDF, opens in a new tab)</span></a>.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer pg-footer">
+    <div class="mountains" aria-hidden="true"></div>
+    <div class="wrap footer-inner">
+      <ul class="footer-links">
+        <li><a href="../index.html">Portfolio</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../Annie-Wu-Resume.pdf" target="_blank" rel="noopener">Resume<span class="visually-hidden"> (PDF, opens in a new tab)</span></a></li>
+        <li><a href="https://github.com/awu0521/anniewu.dev" target="_blank" rel="noopener">This site’s source<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      </ul>
+      <p class="footer-note">© 2026 Annie Wu · Illustrations are original to this site.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js?v=20261107l" defer></script>
+</body>
+</html>

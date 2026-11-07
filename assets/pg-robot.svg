@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <!-- Original thumbnail: a blocky trivia robot at a table with three players. -->
+  <rect width="320" height="200" fill="#DCECF4"/>
+  <g transform="translate(130 22)">
+    <rect x="4" y="54" width="52" height="50" rx="5" fill="#DCECF4" stroke="#28352F" stroke-width="2.5"/>
+    <g transform="rotate(-10 30 52)">
+      <rect y="10" width="60" height="44" rx="6" fill="#E9E1F3" stroke="#28352F" stroke-width="2.5"/>
+      <rect x="8" y="18" width="44" height="28" rx="3" fill="#28352F"/>
+      <rect x="14" y="27" width="10" height="10" fill="#DCECF4"/><rect x="36" y="27" width="10" height="10" fill="#DCECF4"/>
+      <rect x="25" y="0" width="10" height="10" fill="#F5D9C6" stroke="#28352F" stroke-width="2"/>
+    </g>
+  </g>
+  <ellipse cx="160" cy="138" rx="120" ry="30" fill="#EEF4EA" stroke="#28352F" stroke-width="2"/>
+  <g transform="translate(48 146)"><circle r="20" fill="#F5D9C6" stroke="#3B5E3D" stroke-width="4"/><rect x="-15" y="-22" width="30" height="9" fill="#28352F"/><circle cx="-6" cy="-1" r="2" fill="#28352F"/><circle cx="6" cy="-1" r="2" fill="#28352F"/></g>
+  <g transform="translate(160 176)"><circle r="20" fill="#E9E1F3" stroke="#28352F" stroke-width="2"/><rect x="-16" y="-20" width="32" height="8" fill="#6B4E3D"/><circle cx="-6" cy="-1" r="2" fill="#28352F"/><circle cx="6" cy="-1" r="2" fill="#28352F"/></g>
+  <g transform="translate(272 146)"><circle r="20" fill="#DCECF4" stroke="#28352F" stroke-width="2"/><rect x="-13" y="-22" width="26" height="8" fill="#C98F5E"/><circle cx="-6" cy="-1" r="2" fill="#28352F"/><circle cx="6" cy="-1" r="2" fill="#28352F"/></g>
+  <g transform="translate(18 26)"><rect width="74" height="34" rx="6" fill="#FFFDF9" stroke="#28352F" stroke-width="2"/><path d="M14 34l-4 10 14-10" fill="#FFFDF9" stroke="#28352F" stroke-width="2" stroke-linejoin="round"/><path d="M10 13h54M10 22h36" stroke="#C9BFAF" stroke-width="3"/></g>
+</svg>

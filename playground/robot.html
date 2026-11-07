@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Everyone deserves a turn · Debug Playground · Annie Wu</title>
+  <meta name="description" content="Bug 3 of Annie Wu's Debug Playground: fix a trivia robot that only ever talks to Seat 1.">
+  <meta name="theme-color" content="#FFF9F1">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=20261107l">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="pg-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html" aria-label="Annie Wu, back to the portfolio">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        Annie Wu
+      </a>
+      <a class="btn btn-small btn-secondary" href="../index.html"><span aria-hidden="true">←</span> Back to portfolio</a>
+    </div>
+  </header>
+
+  <nav class="pg-subnav" aria-label="Debug Playground">
+    <div class="wrap pg-subnav-inner">
+      <a class="pg-home" href="index.html">Debug Playground</a>
+      <ol class="pg-steps">
+        <li><a href="scanner.html" data-chip="scanner"><span class="chip-box" aria-hidden="true"></span>1 · Scanner<span class="visually-hidden" data-chip-state> (not fixed yet)</span></a></li>
+        <li><a href="journal.html" data-chip="journal"><span class="chip-box" aria-hidden="true"></span>2 · Journal<span class="visually-hidden" data-chip-state> (not fixed yet)</span></a></li>
+        <li><a href="robot.html" data-chip="robot" aria-current="page"><span class="chip-box" aria-hidden="true"></span>3 · Robot<span class="visually-hidden" data-chip-state> (not fixed yet)</span></a></li>
+      </ol>
+      <p class="pg-count"><span data-fixed-count>0</span> of 3 fixed</p>
+    </div>
+  </nav>
+
+  <main id="main" tabindex="-1" class="pg-main">
+    <div class="wrap">
+      <article class="scenario scenario-page" id="scenario-robot" aria-labelledby="robot-title" data-scenario="robot">
+        <header class="scenario-head">
+          <p class="scenario-num">Bug 3 of 3 · inspired by <a href="../index.html#project-hatric">HATRIC</a>, the trivia robot I’m building</p>
+          <h1 id="robot-title">“Everyone deserves a turn.”</h1>
+          <p class="scenario-problem">A trivia robot is hosting three players. Its turn-taking rule always picks whoever sits in Seat 1, so one person answers every question while the others wait. It even asks Seat 1 when nobody is sitting there.</p>
+        </header>
+
+        <noscript><p class="pg-error">This demo needs JavaScript. The rest of the portfolio works without it.</p></noscript>
+
+        <div class="scenario-grid">
+          <div class="scenario-controls controls-run">
+            <fieldset>
+              <legend>1. Who’s at the table? <span class="legend-note">(fictional players)</span></legend>
+              <div class="check-list" data-player-toggles></div>
+            </fieldset>
+            <div class="control-row">
+              <button class="btn btn-primary" type="button" data-action="turn">Run 1 turn</button>
+              <button class="btn btn-secondary" type="button" data-action="turns">Run 6 turns</button>
+            </div>
+          </div>
+
+          <div class="scenario-output">
+            <figure class="scene-frame table-scene">
+              <svg class="scene robot-scene" viewBox="-20 -10 400 320" role="img" aria-labelledby="robot-scene-title">
+                  <title id="robot-scene-title">An original illustrated robot sitting behind a round table, with three fictional players: Juniper in seat 1 on the left, Ollie in seat 2 at the front, and Sam in seat 3 on the right.</title>
+                  <rect x="-20" y="-10" width="400" height="320" fill="#DCECF4"/>
+                  <g fill="#CBDFEA"><rect x="20" y="30" width="12" height="12"/><rect x="40" y="52" width="8" height="8"/><rect x="318" y="24" width="10" height="10"/><rect x="300" y="44" width="6" height="6"/></g>
+                  <g transform="translate(276 64)"><rect width="56" height="40" rx="3" fill="#FFFDF9" stroke="#28352F" stroke-width="2"/><path d="M8 12h40M8 20h28M8 28h34" stroke="#A9CDE0" stroke-width="2"/></g>
+                  <text x="304" y="120" text-anchor="middle" class="scene-label">QUESTION CARDS</text>
+                  <!-- robot (drawn first so the table hides its base) -->
+                  <g class="robot" data-robot>
+                    <rect x="150" y="116" width="60" height="64" rx="6" fill="#DCECF4" stroke="#28352F" stroke-width="2.5"/>
+                    <rect x="164" y="128" width="32" height="16" rx="2" fill="#FFF9F1" stroke="#28352F" stroke-width="2"/>
+                    <g class="robot-head" data-robot-head>
+                      <rect x="140" y="58" width="80" height="56" rx="8" fill="#E9E1F3" stroke="#28352F" stroke-width="2.5"/>
+                      <rect x="150" y="68" width="60" height="36" rx="4" fill="#28352F"/>
+                      <g data-robot-eyes>
+                        <rect x="160" y="80" width="12" height="12" rx="1" fill="#DCECF4"/>
+                        <rect x="188" y="80" width="12" height="12" rx="1" fill="#DCECF4"/>
+                      </g>
+                      <line x1="180" y1="58" x2="180" y2="44" stroke="#28352F" stroke-width="2.5"/>
+                      <rect x="173" y="34" width="14" height="12" fill="#F5D9C6" stroke="#28352F" stroke-width="2"/>
+                    </g>
+                  </g>
+                  <ellipse cx="180" cy="190" rx="134" ry="36" fill="#DCE8D6"/>
+                  <ellipse cx="180" cy="184" rx="134" ry="36" fill="#EEF4EA" stroke="#28352F" stroke-width="2"/>
+                  <rect x="196" y="172" width="16" height="12" fill="#F5D9C6" stroke="#28352F" stroke-width="1.5" transform="rotate(-8 204 178)"/>
+                  <!-- players -->
+                  <g class="seat" data-seat="0" transform="translate(50 196)">
+                    <circle r="24" fill="#F5D9C6" stroke="#28352F" stroke-width="2"/>
+                    <rect x="-18" y="-26" width="36" height="12" fill="#28352F"/>
+                    <circle cx="-7" cy="-2" r="2.5" fill="#28352F"/><circle cx="7" cy="-2" r="2.5" fill="#28352F"/>
+                    <path d="M-6 8q6 5 12 0" stroke="#28352F" stroke-width="2" fill="none"/>
+                    <text y="44" text-anchor="middle" class="seat-label">1 · Juniper</text>
+                  </g>
+                  <g class="seat" data-seat="1" transform="translate(180 244)">
+                    <circle r="24" fill="#E9E1F3" stroke="#28352F" stroke-width="2"/>
+                    <rect x="-20" y="-24" width="40" height="10" fill="#6B4E3D"/><rect x="-20" y="-14" width="8" height="12" fill="#6B4E3D"/><rect x="12" y="-14" width="8" height="12" fill="#6B4E3D"/>
+                    <circle cx="-7" cy="-2" r="2.5" fill="#28352F"/><circle cx="7" cy="-2" r="2.5" fill="#28352F"/>
+                    <path d="M-6 8q6 5 12 0" stroke="#28352F" stroke-width="2" fill="none"/>
+                    <text y="44" text-anchor="middle" class="seat-label">2 · Ollie</text>
+                  </g>
+                  <g class="seat" data-seat="2" transform="translate(310 196)">
+                    <circle r="24" fill="#DCECF4" stroke="#28352F" stroke-width="2"/>
+                    <rect x="-16" y="-26" width="32" height="10" fill="#C98F5E"/><rect x="10" y="-18" width="10" height="10" fill="#C98F5E"/>
+                    <circle cx="-7" cy="-2" r="2.5" fill="#28352F"/><circle cx="7" cy="-2" r="2.5" fill="#28352F"/>
+                    <path d="M-6 8q6 5 12 0" stroke="#28352F" stroke-width="2" fill="none"/>
+                    <text y="44" text-anchor="middle" class="seat-label">3 · Sam</text>
+                  </g>
+                </svg>
+              <p class="speech" data-speech>Hi! I’m a pretend trivia host. Press “Run 1 turn” to ask a question.</p>
+            </figure>
+            <ul class="turn-bars" data-turn-bars aria-label="Turns per player"></ul>
+            <p class="feedback" data-feedback role="status" aria-live="polite"></p>
+            <div class="compare" data-compare></div>
+          </div>
+
+          <div class="scenario-controls controls-rule">
+            <fieldset>
+              <legend>2. Choose the selection rule</legend>
+              <div class="radio-list">
+                <label class="radio"><input type="radio" name="robot-rule" value="first" checked> <span><strong>Always pick Seat 1</strong><small>Ignores who’s at the table and how many turns anyone has had.</small></span></label>
+                <label class="radio"><input type="radio" name="robot-rule" value="fair"> <span><strong>Fewest turns first</strong><small>Picks a player at the table with the fewest turns. Ties go to whoever has waited longest, then to the lowest seat number.</small></span></label>
+              </div>
+            </fieldset>
+            <button class="btn btn-ghost" type="button" data-action="reset">Reset this demo</button>
+          </div>
+        </div>
+
+        <section class="explain-section" aria-labelledby="robot-note">
+          <h2 id="robot-note">What’s going on here?</h2>
+          <p>This is a <strong>selection rule</strong>: given the current state (who’s present and how many turns each has had), pick the next person to address. The flawed rule is a constant: it returns Seat 1 no matter what. The fixed rule filters to eligible players, sorts by fewest turns, breaks ties by longest wait and then seat number, and takes the first result. Because the tie-break is deterministic, the same state always produces the same choice, which makes the behavior easy to explain and test.</p>
+          <p class="disclaimer"><strong>Honest label:</strong> this is a scripted simulation. It is not a live language model and not a reproduction of HATRIC, where these decisions come from an LLM agent working with vision input. It just shows why “who hasn’t spoken yet?” is worth encoding explicitly.</p>
+          <p><a href="../index.html#project-hatric">Read about HATRIC</a></p>
+        </section>
+      </article>
+
+      <nav class="pg-pager" aria-label="Scenario pages">
+        <a href="journal.html"><span aria-hidden="true">←</span> Previous: the trail journal</a>
+        <a href="index.html">Back to all bugs <span aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer pg-footer">
+    <div class="mountains" aria-hidden="true"></div>
+    <div class="wrap footer-inner">
+      <ul class="footer-links">
+        <li><a href="../index.html">Portfolio</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../Annie-Wu-Resume.pdf" target="_blank" rel="noopener">Resume<span class="visually-hidden"> (PDF, opens in a new tab)</span></a></li>
+        <li><a href="https://github.com/awu0521/anniewu.dev" target="_blank" rel="noopener">This site’s source<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      </ul>
+      <p class="footer-note">© 2026 Annie Wu · Illustrations are original to this site.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js?v=20261107l" defer></script>
+</body>
+</html>
