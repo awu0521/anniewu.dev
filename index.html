@@ -11,7 +11,7 @@
   <meta property="og:description" content="Third-year CS student at UBC. I build thoughtful systems that connect people, data, and the world outside.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261107r">
+  <link rel="stylesheet" href="styles.css?v=20261107v">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body id="top">
@@ -107,7 +107,6 @@
               <span class="shelf-plank" aria-hidden="true"></span>
             </div>
             </div>
-            <p class="shelf-hint" aria-hidden="true">pull a book ↑</p>
           </div>
         </div>
       </div>
@@ -376,92 +375,79 @@
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="wrap">
         <p class="section-kicker"><span class="block-dot" aria-hidden="true"></span>03 · Projects</p>
-        <h2 id="projects-title">Things I’ve built (and one I’m building)</h2>
+        <h2 id="projects-title">Things I’ve built + currently building!</h2>
 
-        <div class="projects">
-          <article class="project" id="project-hatric" aria-labelledby="hatric-title">
-            <header class="project-head">
-              <div>
-                <h3 id="hatric-title">HATRIC: LLM/VLM Trivia Robot</h3>
-                <p class="project-meta">Oct 2026 – present</p>
+        <div class="pb" data-pbook>
+          <div class="pb-viewport">
+            <div class="pb-book" data-pb-book data-open="false" data-side="right" tabindex="0" role="region" aria-roledescription="book" aria-label="Projects book. Click a page, swipe, or use the arrow keys to turn pages.">
+              <!-- book thickness under the closed cover -->
+              <div class="pb-thick" aria-hidden="true"></div>
+              <!-- back cover board (under the right-hand pages) -->
+              <div class="pb-board" aria-hidden="true"></div>
+              <!-- last page: sits on the back cover, under every leaf -->
+              <div class="pb-base pb-paper pb-paper-right" data-pb-face>
+                <div class="pb-content pb-end">
+                  <p class="pb-end-title">The end (for now)</p>
+                  <p class="pb-end-text">More experiments and half-finished ideas live on my GitHub.</p>
+                  <a class="btn btn-small" href="https://github.com/awu0521" target="_blank" rel="noopener">GitHub profile</a>
+                </div>
               </div>
-              <span class="status status-progress">In progress</span>
-            </header>
-            <dl class="project-body">
-              <div><dt>The problem</dt><dd>A robot hosting a game for several people has to decide who to address, where to look, and how to gesture, not just what to say.</dd></div>
-              <div><dt>What I’m doing</dt><dd>
-                <ul>
-                  <li>Building a multi-party LLM agent in async Python that hosts soccer trivia for 2–4 players, using prompt-engineered structured output to choose whom to address and to generate speech, gaze, and gesture decisions.</li>
-                  <li>Integrating an on-device vision-language model through Ollama that reads webcam frames to locate players and gauge engagement, steering the robot’s gaze.</li>
-                  <li>Orchestrating agent calls through a FastAPI/WebSocket server with SQLite, driving a web avatar and an ESP32.</li>
-                  <li>Designing for privacy (vision stays on-device) and explainability (a rationale logged for each action).</li>
-                </ul>
-              </dd></div>
-              <div><dt>Built with</dt><dd><ul class="chips"><li>Python</li><li>Ollama</li><li>FastAPI</li><li>WebSockets</li><li>SQLite</li><li>ESP32</li></ul></dd></div>
-              <div><dt>Where it stands</dt><dd>Actively in development. There’s no public repository or demo yet.</dd></div>
-            </dl>
-            <p class="project-links"><a class="text-link" href="playground/robot.html" target="_blank" rel="noopener">Try a tiny turn-taking demo inspired by it <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new window)</span></a></p>
-          </article>
+              <!-- front cover: front = cover art, back = inside cover with contents -->
+              <div class="pb-leaf pb-leaf-cover" data-pb-leaf>
+                <div class="pb-face pb-front pb-cover" data-pb-face>
+                  <div class="pb-cover-plate">
+                    <p class="pb-cover-title">Projects</p>
+                    <span class="pb-cover-rule" aria-hidden="true"></span>
+                    <p class="pb-cover-year">2025–2026</p>
+                  </div>
+                  <svg class="pb-cover-art" viewBox="40 60 120 124" aria-hidden="true" focusable="false">
+                    <rect x="74" y="110" width="52" height="44" rx="6" fill="#DCECF4" stroke="#28352F" stroke-width="2"/>
+                    <rect x="80" y="82" width="40" height="32" rx="6" fill="#DCECF4" stroke="#28352F" stroke-width="2"/>
+                    <line x1="100" y1="82" x2="100" y2="72" stroke="#28352F" stroke-width="2"/>
+                    <circle cx="100" cy="69" r="4" fill="#E9B795" stroke="#28352F" stroke-width="1.5"/>
+                    <rect x="86" y="90" width="10" height="8" rx="2" fill="#28352F"/>
+                    <rect x="104" y="90" width="10" height="8" rx="2" fill="#28352F"/>
+                    <rect x="88" y="92" width="3" height="3" fill="#DCECF4"/>
+                    <rect x="106" y="92" width="3" height="3" fill="#DCECF4"/>
+                    <rect x="88" y="104" width="24" height="5" rx="2" fill="#28352F"/>
+                    <rect x="91" y="105" width="4" height="3" fill="#A8C29E"/>
+                    <rect x="97" y="105" width="4" height="3" fill="#A8C29E"/>
+                    <rect x="103" y="105" width="4" height="3" fill="#A8C29E"/>
+                    <rect x="96" y="114" width="8" height="6" fill="#C9BFAF" stroke="#28352F" stroke-width="1.5"/>
+                    <rect x="54" y="114" width="20" height="10" rx="4" fill="#DCECF4" stroke="#28352F" stroke-width="2"/>
+                    <rect x="126" y="114" width="20" height="10" rx="4" fill="#DCECF4" stroke="#28352F" stroke-width="2"/>
+                    <circle cx="50" cy="119" r="6" fill="#E9B795" stroke="#28352F" stroke-width="1.5"/>
+                    <circle cx="150" cy="119" r="6" fill="#E9B795" stroke="#28352F" stroke-width="1.5"/>
+                    <rect x="82" y="118" width="36" height="28" rx="3" fill="#A9CDE0" stroke="#28352F" stroke-width="1.5"/>
+                    <circle cx="100" cy="128" r="5" fill="#28352F"/>
+                    <circle cx="100" cy="128" r="2" fill="#7FC77A"/>
+                    <rect x="84" y="138" width="8" height="5" rx="1" fill="#E9B795" stroke="#28352F" stroke-width="1"/>
+                    <rect x="95" y="138" width="8" height="5" rx="1" fill="#C3B2DC" stroke="#28352F" stroke-width="1"/>
+                    <rect x="106" y="138" width="8" height="5" rx="1" fill="#A8C29E" stroke="#28352F" stroke-width="1"/>
+                    <rect x="82" y="154" width="14" height="22" rx="4" fill="#DCECF4" stroke="#28352F" stroke-width="2"/>
+                    <rect x="104" y="154" width="14" height="22" rx="4" fill="#DCECF4" stroke="#28352F" stroke-width="2"/>
+                    <rect x="79" y="172" width="20" height="8" rx="3" fill="#28352F"/>
+                    <rect x="101" y="172" width="20" height="8" rx="3" fill="#28352F"/>
+                  </svg>
+                </div>
+                <div class="pb-face pb-back pb-inside" data-pb-face>
+                  <div class="pb-endpaper">
+                    <div class="pb-content">
+                      <p class="pb-page-num">Contents</p>
+                      <ol class="pb-toc" data-pb-toc></ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- project leaves are added here by script.js -->
+            </div>
+          </div>
 
-          <article class="project" id="project-inventory" aria-labelledby="inventory-title">
-            <header class="project-head">
-              <div>
-                <h3 id="inventory-title">IoT Inventory Tracker</h3>
-                <p class="project-meta">Jun – Aug 2026</p>
-              </div>
-              <span class="status status-done">Built</span>
-            </header>
-            <dl class="project-body">
-              <div><dt>The problem</dt><dd>Logging physical items by hand is slow and easy to get wrong.</dd></div>
-              <div><dt>What I did</dt><dd>Built an embedded system on an ESP32 that reads RFID tags to log items in real time, and implemented client-server communication over WiFi that turns physical events into structured records.</dd></div>
-              <div><dt>Built with</dt><dd><ul class="chips"><li>C++</li><li>Arduino</li><li>ESP32-WROOM-32</li><li>RFID</li><li>TypeScript</li></ul></dd></div>
-              <div><dt>Outcome</dt><dd>A working hardware-to-software pipeline: a tag scan becomes a structured inventory record.</dd></div>
-            </dl>
-            <p class="project-links">
-              <a class="btn btn-small" href="https://github.com/awu0521/inventory-tracker" target="_blank" rel="noopener">Source on GitHub<span class="visually-hidden">: IoT Inventory Tracker (opens in a new tab)</span></a>
-              <a class="text-link" href="playground/scanner.html" target="_blank" rel="noopener">Related playground demo <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new window)</span></a>
-            </p>
-          </article>
-
-          <article class="project" id="project-fifa" aria-labelledby="fifa-title">
-            <header class="project-head">
-              <div>
-                <h3 id="fifa-title">FIFA 2026 Tracker and Predictor</h3>
-                <p class="project-meta">Jun – Jul 2026</p>
-              </div>
-              <span class="status status-done">Built</span>
-            </header>
-            <dl class="project-body">
-              <div><dt>The problem</dt><dd>Forecasting the 2026 World Cup winner from a small amount of in-tournament data, without fooling myself about accuracy.</dd></div>
-              <div><dt>What I did</dt><dd>Built a Python engine that rates teams with Elo (seeded from pre-tournament FIFA rankings, with heavier weighting for knockout matches) and runs 200,000 Monte Carlo simulations of the remaining bracket.</dd></div>
-              <div><dt>Built with</dt><dd><ul class="chips"><li>Python</li><li>Elo ratings</li><li>Monte Carlo simulation</li></ul></dd></div>
-              <div><dt>How I checked it</dt><dd>
-                <p class="stat"><span class="stat-num">83.8%</span> <span class="stat-label">of decisive matches called correctly in a chronological backtest (67 of 80)</span></p>
-                <p class="fine">The backtest walks through the 2026 tournament’s matches in date order. Before each match, the team with the higher Elo rating is the prediction; only after the result is checked are the ratings updated, so no prediction uses future results. Draws are excluded, which leaves 80 decisive matches.</p>
-              </dd></div>
-            </dl>
-            <p class="project-links"><a class="btn btn-small" href="https://github.com/awu0521/fifa2026" target="_blank" rel="noopener">Source on GitHub<span class="visually-hidden">: FIFA 2026 Tracker and Predictor (opens in a new tab)</span></a></p>
-          </article>
-
-          <article class="project" id="project-trek" aria-labelledby="trek-title">
-            <header class="project-head">
-              <div>
-                <h3 id="trek-title">TrackTheTrek</h3>
-                <p class="project-meta">Jul – Sep 2025</p>
-              </div>
-              <span class="status status-done">Built</span>
-            </header>
-            <dl class="project-body">
-              <div><dt>The problem</dt><dd>I wanted a simple way to keep track of the hikes I do around BC.</dd></div>
-              <div><dt>What I did</dt><dd>Built a Java desktop hiking tracker around an object-oriented class hierarchy, with hikes saved to and loaded from JSON so the data persists between sessions.</dd></div>
-              <div><dt>Built with</dt><dd><ul class="chips"><li>Java</li><li>OOP</li><li>JSON persistence</li></ul></dd></div>
-              <div><dt>Outcome</dt><dd>A desktop app whose trail log is still there the next time it opens.</dd></div>
-            </dl>
-            <p class="project-links">
-              <a class="btn btn-small" href="https://github.com/awu0521/TrackTheTrek" target="_blank" rel="noopener">Source on GitHub<span class="visually-hidden">: TrackTheTrek (opens in a new tab)</span></a>
-              <a class="text-link" href="playground/journal.html" target="_blank" rel="noopener">Related playground demo <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new window)</span></a>
-            </p>
-          </article>
+          <div class="book-controls">
+            <button class="book-btn" type="button" data-book-prev aria-label="Previous page" disabled><span aria-hidden="true">←</span></button>
+            <span class="book-indicator" data-book-indicator aria-live="polite">Click the cover to open</span>
+            <button class="book-btn" type="button" data-book-next aria-label="Open the book"><span aria-hidden="true">→</span></button>
+          </div>
         </div>
       </div>
     </section>
@@ -570,6 +556,6 @@
     <span class="visually-hidden" data-bang-label>Open Mr. Oli’s QA report</span>
   </button>
 
-  <script src="script.js?v=20261107r" defer></script>
+  <script src="script.js?v=20261107v" defer></script>
 </body>
 </html>

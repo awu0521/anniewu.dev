@@ -1827,4 +1827,278 @@
   });
 
   safely('qa-toast', initQaToast);
+
+  /* ---------- Project book ---------- */
+  // A closed hardcover that opens and turns real 3D leaves. Each leaf has a front
+  // (right-hand page) and a back (left-hand page). Pages are numbered 0..8:
+  // 0 = closed cover, then [1 contents | 2 P1], [3 P2 | 4 P3], [5 P4 | 6 P5], [7 P6 | 8 end].
+  // Wide screens show a whole spread; phones show one page at a time.
+  safely('project-book', function () {
+    var book = $('[data-pb-book]');
+    if (!book) return;
+    var viewport  = book.parentNode;
+    var prevBtn   = $('[data-book-prev]');
+    var nextBtn   = $('[data-book-next]');
+    var indicator = $('[data-book-indicator]');
+    var toc       = $('[data-pb-toc]', book);
+    var base      = $('.pb-base', book);
+    var narrowQuery = window.matchMedia ? window.matchMedia('(max-width: 640px)') : null;
+    function narrow() { return !!(narrowQuery && narrowQuery.matches); }
+
+    var PROJECTS = [
+      {
+        title: 'HATRIC: LLM/VLM Trivia Robot',
+        statusClass: 'status-progress', statusText: 'In progress',
+        meta: 'Oct 2026 – present',
+        body: [
+          ['The problem', 'A robot hosting a game for several people has to decide who to address, where to look, and how to gesture — not just what to say.'],
+          ['What I\'m doing', 'Multi-party LLM agent in async Python; on-device VLM via Ollama reads webcam frames to steer gaze; FastAPI/WebSocket server with SQLite drives a web avatar and an ESP32.'],
+          ['Currently working with', '<ul class="chips"><li>Python</li><li>Ollama</li><li>FastAPI</li><li>WebSockets</li><li>SQLite</li><li>ESP32</li></ul>']
+        ],
+        links: ''
+      },
+      {
+        title: 'IoT Inventory Tracker',
+        statusClass: 'status-done', statusText: 'Built',
+        meta: 'Jun – Aug 2026',
+        body: [
+          ['The problem', 'Logging physical items by hand is slow and error-prone.'],
+          ['What I did', 'ESP32 reads RFID tags in real time; client-server over WiFi turns each scan into a structured inventory record.'],
+          ['Built with', '<ul class="chips"><li>C++</li><li>Arduino</li><li>ESP32</li><li>RFID</li><li>TypeScript</li></ul>'],
+          ['Outcome', 'A working hardware-to-software pipeline.']
+        ],
+        links: '<a class="btn btn-small" href="https://github.com/awu0521/inventory-tracker" target="_blank" rel="noopener">GitHub</a>'
+      },
+      {
+        title: 'FIFA 2026 Tracker and Predictor',
+        statusClass: 'status-done', statusText: 'Built',
+        meta: 'Jun – Jul 2026',
+        body: [
+          ['The problem', 'Forecast the 2026 World Cup winner without fooling myself about accuracy.'],
+          ['What I did', 'Python engine: Elo ratings seeded from FIFA rankings + 200,000 Monte Carlo simulations of the remaining bracket.'],
+          ['Built with', '<ul class="chips"><li>Python</li><li>Elo ratings</li><li>Monte Carlo simulation</li></ul>'],
+          ['How I checked it', '<p class="stat"><span class="stat-num">83.8%</span> <span class="stat-label">of decisive matches called correctly</span></p>']
+        ],
+        links: '<a class="btn btn-small" href="https://github.com/awu0521/fifa2026" target="_blank" rel="noopener">GitHub</a>'
+      },
+      {
+        title: 'TrackTheTrek',
+        statusClass: 'status-done', statusText: 'Built',
+        meta: 'Jul – Sep 2025',
+        body: [
+          ['The problem', 'I wanted a simple way to keep track of hikes around BC.'],
+          ['What I did', 'Java desktop hiking tracker with an OOP class hierarchy; hikes saved to/loaded from JSON so the trail log persists between sessions.'],
+          ['Built with', '<ul class="chips"><li>Java</li><li>OOP</li><li>JSON persistence</li></ul>'],
+          ['Outcome', 'A desktop app whose trail log is still there the next time it opens.']
+        ],
+        links: '<a class="btn btn-small" href="https://github.com/awu0521/TrackTheTrek" target="_blank" rel="noopener">GitHub</a>'
+      },
+      {
+        title: 'Save Our Foods',
+        statusClass: 'status-done', statusText: 'Built',
+        meta: '2025 · Hackathon',
+        body: [
+          ['The problem', 'Food waste from near-expiry items that never get sold or used.'],
+          ['What I did', 'Full-stack Next.js marketplace where sellers list near-expiry food; Gemini AI reads item photos to suggest names, expiry dates, and fair prices; buyers get a PDF receipt on checkout.'],
+          ['Built with', '<ul class="chips"><li>Next.js</li><li>Supabase</li><li>Gemini AI</li><li>TypeScript</li></ul>']
+        ],
+        links: '<a class="btn btn-small" href="https://github.com/hackscholar/save-our-foods" target="_blank" rel="noopener">GitHub</a>'
+      },
+      {
+        title: 'How Cooked Are You?',
+        statusClass: 'status-done', statusText: 'Built',
+        meta: '2025 · Hackathon',
+        body: [
+          ['The problem', 'UBC CS students need a fun, honest way to gauge how overwhelmed they are by upcoming deadlines.'],
+          ['What I did', 'Next.js web app: enter assignments with weights and due dates (or import a .ics schedule), get a “how cooked” score, an auto-generated study schedule, and an .ics export for Google/Apple/Outlook Calendar.'],
+          ['Built with', '<ul class="chips"><li>Next.js</li><li>TypeScript</li><li>iCal</li></ul>']
+        ],
+        links: '<a class="btn btn-small" href="https://github.com/awu0521/how-cooked-are-you" target="_blank" rel="noopener">GitHub</a>'
+      }
+    ];
+    var TOTAL = PROJECTS.length;
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+    /** Build one page face for a project (side: 'front' = right page, 'back' = left page). */
+    function projectFace(proj, i, side) {
+      var face = document.createElement('div');
+      face.className = 'pb-face pb-' + side + ' pb-paper pb-paper-' + (side === 'front' ? 'right' : 'left');
+      face.setAttribute('data-pb-face', '');
+      var html = '<div class="pb-content">' +
+        '<p class="pb-page-num">' + pad(i + 1) + ' / ' + pad(TOTAL) + '</p>' +
+        '<div class="book-project-head"><h3>' + proj.title + '</h3>' +
+        '<span class="status ' + proj.statusClass + '">' + proj.statusText + '</span></div>' +
+        '<p class="book-meta">' + proj.meta + '</p><dl class="book-dl">';
+      proj.body.forEach(function (row) { html += '<dt>' + row[0] + '</dt><dd>' + row[1] + '</dd>'; });
+      html += '</dl>' + (proj.links ? '<div class="book-links">' + proj.links + '</div>' : '') + '</div>';
+      face.innerHTML = html;
+      return face;
+    }
+
+    // Project leaves: leaf 1 = P1 / P2, leaf 2 = P3 / P4, leaf 3 = P5 / P6.
+    for (var i = 0; i < TOTAL; i += 2) {
+      var leaf = document.createElement('div');
+      leaf.className = 'pb-leaf';
+      leaf.setAttribute('data-pb-leaf', '');
+      leaf.appendChild(projectFace(PROJECTS[i], i, 'front'));
+      if (PROJECTS[i + 1]) leaf.appendChild(projectFace(PROJECTS[i + 1], i + 1, 'back'));
+      book.appendChild(leaf);
+    }
+    var leaves = $all('[data-pb-leaf]', book);
+    var L = leaves.length;            // 4 leaves (cover + 3)
+    var LAST = L * 2;                 // last page index (8 = end page)
+
+    // Contents on the inside cover: each entry jumps straight to its page.
+    PROJECTS.forEach(function (proj, i) {
+      var li = document.createElement('li');
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pb-toc-link';
+      b.innerHTML = '<span class="pb-toc-title">' + proj.title + '</span><span class="pb-toc-dots" aria-hidden="true"></span><span class="pb-toc-num">' + pad(i + 1) + '</span>';
+      b.addEventListener('click', function (e) { e.stopPropagation(); go(i + 2); });
+      li.appendChild(b);
+      toc.appendChild(li);
+    });
+
+    var page = 0;
+    var flipped = [];                 // flipped[i] = leaf i is on the left
+    var busy = false;
+    var FLIP_MS = 900, STAGGER_MS = 140;
+
+    function spreadOf(p) { return Math.ceil(p / 2); }
+    function restingZ(i) { return flipped[i] ? i + 1 : L - i; }
+
+    /** Hide pages you can't see from keyboard and screen readers. */
+    function updateInert() {
+      var s = spreadOf(page);
+      var visible = [];
+      var left  = s > 0 ? leaves[s - 1].querySelector('.pb-back') : null;
+      var right = s < L ? leaves[s].querySelector('.pb-front') : base;
+      if (narrow()) visible.push(page % 2 ? left : right);
+      else { visible.push(right); if (left) visible.push(left); }
+      $all('[data-pb-face]', book).forEach(function (f) {
+        var show = visible.indexOf(f) !== -1;
+        if (show) f.removeAttribute('inert'); else f.setAttribute('inert', '');
+        f.setAttribute('aria-hidden', show ? 'false' : 'true');
+      });
+    }
+
+    function updateUi() {
+      var s = spreadOf(page);
+      book.setAttribute('data-open', s > 0 ? 'true' : 'false');
+      book.setAttribute('data-side', page === 0 || page % 2 === 0 ? 'right' : 'left');
+      var atEnd = narrow() ? page >= LAST : s >= L;
+      if (prevBtn) { prevBtn.disabled = page === 0; prevBtn.setAttribute('aria-label', s === 1 && (!narrow() || page === 1) ? 'Close the book' : 'Previous page'); }
+      if (nextBtn) { nextBtn.disabled = atEnd; nextBtn.setAttribute('aria-label', page === 0 ? 'Open the book' : 'Next page'); }
+      if (indicator) {
+        var label;
+        if (page === 0) label = (narrow() ? 'Tap' : 'Click') + ' the cover to open';
+        else if (narrow()) label = 'Page ' + page + ' of ' + LAST;
+        else label = 'Pages ' + (2 * s - 1) + '–' + (2 * s) + ' of ' + LAST;
+        indicator.textContent = label;
+      }
+      updateInert();
+    }
+
+    /** Turn to page p, flipping each leaf that has to change sides one after another. */
+    function go(p, instant) {
+      p = Math.max(0, Math.min(LAST, p));
+      if (busy && !instant) return;
+      var target = spreadOf(p);
+      var turning = [];
+      for (var i = 0; i < L; i++) if (flipped[i] !== (i < target)) turning.push(i);
+      if (target < spreadOf(page)) turning.reverse(); // turning back: top of the left pile first
+      page = p;
+      var still = instant || reducedMotion();
+      book.classList.toggle('is-instant', !!still);
+
+      turning.forEach(function (i, order) {
+        var leaf = leaves[i];
+        function flip() {
+          flipped[i] = i < target;
+          leaf.style.zIndex = String(50 + order);
+          leaf.classList.toggle('is-flipped', flipped[i]);
+          if (!still) {
+            leaf.classList.remove('is-turning');
+            void leaf.offsetWidth;   // restart the shading animation
+            leaf.classList.add('is-turning');
+          }
+        }
+        if (still || order === 0) flip(); else setTimeout(flip, order * STAGGER_MS);
+      });
+
+      updateUi();
+      if (still || !turning.length) { settle(); return; }
+      busy = true;
+      setTimeout(settle, FLIP_MS + (turning.length - 1) * STAGGER_MS + 30);
+    }
+
+    function settle() {
+      busy = false;
+      leaves.forEach(function (leaf, i) {
+        leaf.classList.remove('is-turning');
+        leaf.style.zIndex = String(restingZ(i));
+      });
+    }
+
+    function next() {
+      if (narrow()) go(page + 1);
+      else go(page === 0 ? 1 : 2 * (spreadOf(page) + 1) - 1);
+    }
+    function prev() {
+      if (narrow()) go(page - 1);
+      else go(spreadOf(page) <= 1 ? 0 : 2 * (spreadOf(page) - 1) - 1);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', prev);
+    if (nextBtn) nextBtn.addEventListener('click', next);
+
+    book.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+      else if (e.key === 'Home') { e.preventDefault(); go(0); }
+      else if (e.key === 'End') { e.preventDefault(); go(LAST); }
+    });
+
+    // Click a page to turn it: right half forward, left half back (phones: left third back).
+    var swiped = false;
+    book.addEventListener('click', function (e) {
+      if (swiped) { swiped = false; return; }
+      if (e.target.closest('a, button')) return;
+      if (page === 0) { next(); return; }
+      var r = viewport.getBoundingClientRect();
+      var frac = (e.clientX - r.left) / r.width;
+      if (frac < (narrow() ? 0.3 : 0.5)) prev(); else next();
+    });
+
+    // Swipe on touch screens.
+    var startX = null, startY = 0;
+    viewport.addEventListener('touchstart', function (e) {
+      startX = e.touches[0].clientX; startY = e.touches[0].clientY;
+    }, { passive: true });
+    viewport.addEventListener('touchend', function (e) {
+      if (startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX;
+      var dy = e.changedTouches[0].clientY - startY;
+      startX = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        swiped = true;
+        setTimeout(function () { swiped = false; }, 400);
+        if (dx < 0) next(); else prev();
+      }
+    }, { passive: true });
+
+    function onResize() {
+      // Phones show single pages; snap a desktop spread to its left page and vice versa.
+      if (!narrow() && page > 0 && page % 2 === 0) page -= 1;
+      updateUi();
+    }
+    if (narrowQuery) {
+      if (narrowQuery.addEventListener) narrowQuery.addEventListener('change', onResize);
+      else if (narrowQuery.addListener) narrowQuery.addListener(onResize);
+    }
+
+    leaves.forEach(function (leaf, i) { flipped[i] = false; leaf.style.zIndex = String(restingZ(i)); });
+    updateUi();
+  });
 })();
