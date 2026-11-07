@@ -417,6 +417,25 @@
     if ('ResizeObserver' in window) new ResizeObserver(draw).observe(layer);
   }
 
+  /* ---------- Experience timeline: one entry in focus at a time ---------- */
+  // The entry crossing the middle band of the screen is "active"; the others are
+  // greyed out (hover/focus still brings any of them back). Without JS, all are clear.
+  function initTimeline() {
+    var list = $('.timeline');
+    if (!list) return;
+    var items = $all('.role', list);
+    if (!items.length) return;
+    function setActive(el) { items.forEach(function (it) { it.classList.toggle('is-active', it === el); }); }
+    list.classList.add('is-enhanced');
+    setActive(items[0]);
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) setActive(en.target); });
+      }, { rootMargin: '-42% 0px -42% 0px', threshold: 0 });
+      items.forEach(function (it) { io.observe(it); });
+    }
+  }
+
   /* ---------- Books → command center → fade to the section ---------- */
   // Clicking a book types a command on the monitor, then fades the page into the
   // matching section. The resume book still opens the PDF right away (a delayed
@@ -1791,6 +1810,7 @@
   safely('carousel', initCarousels);
   safely('flips', initFlips);
   safely('mouse-cord', initMouseCord);
+  safely('timeline', initTimeline);
   safely('book-terminal', initBookTerminal);
 
   var progress = { set: function () {} };

@@ -1,10 +1,102 @@
 # Annie Wu — The Portfolio You Can Debug
 
-My personal portfolio for the AWS Student Builder Challenge. It is a calm, ordinary portfolio (About, Tech Superpowers, Projects, Experience, Contact, resume) with one optional extra: a **Debug Playground**, three small illustrated interactive scenarios inspired by my projects. The playground lives on its own pages (`playground/`) and opens in a new window from the portfolio.
+My personal portfolio for the AWS Student Builder Challenge. It's a calm, ordinary portfolio (About Me, Skills, Projects, Experience, Contact, resume) with one optional extra: a **Debug Playground**, three small illustrated interactive scenarios inspired by my projects. The playground lives on its own pages (`playground/`) and opens in a new window from the portfolio.
 
 - Built with plain HTML, CSS, and JavaScript: no frameworks, packages, build step, backend, or paid APIs.
-- The portfolio itself is plain HTML with anchor links and works without JavaScript. The playground is separate, and each demo runs in its own error boundary.
-- Illustrations are original SVGs in `assets/`.
+- The portfolio content is plain HTML with anchor links and still reads without JavaScript. Every interactive feature runs in its own error boundary, so one failing demo can't break the page.
+- Illustrations are original SVGs, drawn for this site.
+
+---
+
+# My portfolio
+
+## Introduction
+
+**Annie Wu**, Computer Science (Co-op) at the University of British Columbia.
+*"A little curiosity. A lot of building (and debugging)."*
+
+## About me
+
+I'm a third-year Computer Science student in the Co-op program at UBC. I like problems that sit between people and systems: a robot deciding who to talk to, a sensor turning a physical object into a record, a model that has to be honest about what it knows.
+
+Right now I'm a CTMS Co-op Student at Vancouver Coastal Health Research Institute, working on research data instruments and workflows, and I'm building HATRIC, a multi-party trivia robot powered by local language and vision models.
+
+- **Studying:** B.Sc. Computer Science (Co-op), UBC · Sep 2024 – Apr 2028 · 3.75 GPA
+- **Coursework:** Software Construction (CPSC 210), Data Structures & Algorithms (CPSC 221), Relational Databases (CPSC 304), Applied Machine Learning (CPSC 330)
+- **Based in:** Vancouver, BC
+
+## Skills
+
+On the site these are the "Tech Superpowers": each one is grouped by the kind of problem and backed by a project.
+
+| Superpower | Tools | Evidence |
+| --- | --- | --- |
+| Intelligent interaction | Python, LLM/VLM orchestration, Ollama, FastAPI | HATRIC |
+| Physical-to-digital systems | C++, ESP32, RFID, WiFi | IoT Inventory Tracker |
+| Modeling and evaluation | Python, Elo ratings, Monte Carlo simulation | FIFA 2026 Tracker and Predictor |
+| Application design and dependable data | Java, OOP, JSON, validation, workflows | TrackTheTrek, VCHRI co-op |
+
+- **Languages:** Python, Java, C++, C, JavaScript, TypeScript, SQL, R
+- **Web & backend:** FastAPI, SQLite, WebSockets, React, Next.js, Expo, Firebase, HTML, CSS, Git
+- **Concepts:** LLMs, VLMs, prompt engineering, agent orchestration, OOP, client-server, embedded systems
+- **Tools:** Ollama, REDCap, Power Automate, Figma, Excel
+
+## Projects
+
+**HATRIC: LLM/VLM Trivia Robot** (Oct 2026 – present, in progress)
+A robot that hosts soccer trivia for 2–4 players and has to decide who to address, where to look, and how to gesture, not just what to say. I'm building the multi-party LLM agent in async Python, integrating an on-device vision-language model (Ollama) that reads webcam frames to steer the robot's gaze, and orchestrating it all through a FastAPI/WebSocket server with SQLite that drives a web avatar and an ESP32. Vision stays on-device, and every action logs a rationale. No public repo or demo yet; the playground's robot scenario is inspired by it.
+
+**IoT Inventory Tracker** (Jun – Aug 2026)
+An ESP32 embedded system that reads RFID tags and logs items in real time, with client-server communication over WiFi that turns a tag scan into a structured inventory record. Built with C++, Arduino, ESP32-WROOM-32, RFID, and TypeScript.
+→ [github.com/awu0521/inventory-tracker](https://github.com/awu0521/inventory-tracker)
+
+**FIFA 2026 Tracker and Predictor** (Jun – Jul 2026)
+A Python engine that rates teams with Elo (seeded from pre-tournament FIFA rankings, with knockout matches weighted more heavily) and runs 200,000 Monte Carlo simulations of the remaining bracket. In a chronological backtest it called **83.8% of decisive matches correctly (67 of 80)**; ratings only update after each result, so no prediction uses future data.
+→ [github.com/awu0521/fifa2026](https://github.com/awu0521/fifa2026)
+
+**TrackTheTrek** (Jul – Sep 2025)
+A Java desktop hiking tracker built around an object-oriented class hierarchy, with hikes saved to and loaded from JSON so the trail log persists between sessions.
+→ [github.com/awu0521/TrackTheTrek](https://github.com/awu0521/TrackTheTrek)
+
+## Fun fact
+
+My puppy **Mr. Oli** (adopted because I'm a lifelong Snoopy fan) is the site's Head of QA. He sits on the desk in the hero, files a QA report about the three bugs in the workshop, and guards the bug jar. Visitors can also flip the "field notes" cards in About Me to find photos of snowboarding, hiking the Chief, watching FIFA 2026 in my hometown, and Mr. Oli reviewing code.
+
+## Style
+
+Warm, hand-illustrated, and playful, but calm: a cozy desk in a workshop. Cream paper background with soft pastels (sage, lavender, peach, sky blue) and dark green ink outlines, original SVG drawings, and a small terminal ("command center") for a touch of retro computing. The playful bits are optional; the portfolio underneath reads like a clean, ordinary page.
+
+## Other sections
+
+- **Experience & Community:** a timeline that highlights one role at a time as you scroll.
+  - CTMS Co-op Student, Vancouver Coastal Health Research Institute (Sep 2026 – present): REDCap instruments and data dictionaries across 100+ studies, CTMS study setup, Power Automate workflows, and user training.
+  - Social Coordinator, UBC Computer Science Student Society (Sep 2025 – present): three social events per term for 3.4k+ CS students.
+  - Bootcamp Volunteer, GIRLsmarts4tech (May – Jun 2025): taught JavaScript, Python, and HTML to middle school students.
+- **Contact:** email (annie.wu2024@gmail.com), [LinkedIn](https://linkedin.com/in/annie-wu06), [GitHub](https://github.com/awu0521), and the resume (view or download).
+- **Debug Playground:** three tiny broken systems to fix (see below).
+
+---
+
+## What's interactive
+
+On the portfolio (`index.html`):
+
+- **Windowsill books → command center.** Pulling a book off the windowsill types a command on the desk monitor, then fades to that section. The resume book opens the PDF directly.
+- **Mr. Oli's QA report** pops up with "3 bugs spotted in the workshop" and links to the playground. It can be dismissed and reopened.
+- **Bug jar.** "Release the bugs from the jar" lets bugs loose on the desk to catch, with a running count.
+- **Field notes.** Lift a folded corner of each About Me card to see a photo.
+- **Skills carousel.** Auto-scrolls; use ← → keys or the buttons, and it can be paused.
+- **Experience timeline.** The role in the middle of the screen stays in focus; the others dim.
+
+In the Debug Playground (`playground/`):
+
+| Page | Bug | Inspired by | The fix |
+| --- | --- | --- | --- |
+| `scanner.html` | "The scanner has déjà vu." | IoT Inventory Tracker | Ignore repeat scans within 2 seconds |
+| `journal.html` | "The trail journal forgot the hike." | TrackTheTrek | Save hikes to the browser so they persist |
+| `robot.html` | "Everyone deserves a turn." | HATRIC | Pick the player with the fewest turns, not always Seat 1 |
+
+The step chips and the hub remember which bugs you've fixed.
 
 ## Project structure
 
@@ -30,10 +122,14 @@ assets/
 README.md
 ```
 
+`styles.css` and `script.js` are loaded with a version query (for example `styles.css?v=20261107m`) so browsers pick up changes. When you edit either file, bump the version in all five HTML pages.
+
 These stay **local only** (listed in `.gitignore`):
 
 - `plan.md`: private planning notes.
 - `docs/submission-draft.md`: hackathon write-up draft. Paste it into Builder Center when it's final. Don't publish it here, because Amplify serves every file in the repo.
+
+`CLAUDE.md`, `AGENTS.md`, and `.cursor/` are also local tooling files; don't upload them.
 
 ## Preview locally
 
@@ -50,7 +146,7 @@ Any static server works. If you use VS Code, the "Live Server" extension is fine
 
 ## Put the files on GitHub
 
-The portfolio source repository is `https://github.com/awu0521/anniewu.dev` (public). It is a separate link from my GitHub profile.
+The portfolio source repository is [github.com/awu0521/anniewu.dev](https://github.com/awu0521/anniewu.dev) (public). It is a separate link from my GitHub profile.
 
 Upload these files and folders and **keep the structure exactly as shown**, with `index.html` at the top level of the repository (not inside a subfolder):
 
@@ -99,9 +195,13 @@ From then on, every push to `main` redeploys automatically.
 Check these on the live `amplifyapp.com` URL, not on localhost:
 
 - [ ] The page loads over HTTPS with styles, the hero illustration, and the favicon.
-- [ ] Each header link (About, Tech Superpowers, Projects, Experience, Contact) jumps to its section, and **Resume** opens the PDF.
+- [ ] Each header link (About Me, Skills, Projects) jumps to its section, and **Resume** opens the PDF.
+- [ ] Each windowsill book types its command on the monitor and fades to the right section; the resume book opens the PDF.
 - [ ] **View resume** and **Download resume** both work.
 - [ ] The GitHub, LinkedIn, project repository, and "This site's source" links open correctly.
+- [ ] Mr. Oli's QA report appears, can be dismissed and reopened, and **Help debug** opens the playground.
+- [ ] The bug jar releases bugs and the "caught" count goes up.
+- [ ] Field-note cards flip to show their photos, the skills carousel scrolls with ← → and pauses, and the experience timeline highlights one role at a time.
 - [ ] **Open the Debug Playground** opens the playground in a new window, and "Back to portfolio" returns.
 - [ ] Scanner page: with "Record every scan", the same object lands on the shelf several times. After switching to "Ignore repeats within 2 seconds", repeats show as crossed-out squares on the detection strip and nothing new lands on the shelf.
 - [ ] Journal page: in temporary mode, a hike disappears after **Close and reopen**. In "Save to this browser" mode, it stays (the chest shows the saved count), even after you reload the page. **Reset this demo** clears it.

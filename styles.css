@@ -482,7 +482,7 @@ main:focus { outline: none; }
 .desk-items { position: relative; max-width: var(--wrap); height: 100%; margin: 0 auto; }
 .desk-item { position: absolute; display: block; margin: 0; }
 .desk-item > svg { display: block; width: 100%; height: auto; }
-.item-breadboard { left: 3%; bottom: calc(var(--desk-h) * .16); width: calc(132px * var(--k)); }
+.item-breadboard { left: 6%; bottom: calc(var(--desk-h) * .16); width: calc(132px * var(--k)); z-index: 2; } /* sits on top of the loose parts */
 .item-breadboard > svg { rotate: -6deg; } /* a little askew */
 .item-computer {
   left: 2%;
@@ -581,7 +581,15 @@ h2[tabindex="-1"]:focus { outline: none; }
   border: 3px solid var(--ink);
   border-radius: 6px 6px 2px 2px;
 }
-.item-parts { left: 15.4%; bottom: calc(var(--desk-h) * .04); width: calc(86px * var(--k)); }
+.item-parts { display: none; }
+/* Loose parts scattered at odd angles to the left of the breadboard */
+.part { z-index: 1; }
+.part-note     { left: 3.4%;  bottom: calc(var(--desk-h) * .34); width: calc(42px * var(--k)); rotate: -11deg; }
+.part-chip     { left: .5%;   bottom: calc(var(--desk-h) * .6);  width: calc(40px * var(--k)); rotate: -14deg; }
+.part-led-a    { left: 1.4%;  bottom: calc(var(--desk-h) * .14); width: calc(13px * var(--k)); rotate: -28deg; }
+.part-led-b    { left: 16%;   bottom: calc(var(--desk-h) * .07); width: calc(13px * var(--k)); rotate: 38deg; }
+.part-resistor { left: 3.6%;  bottom: calc(var(--desk-h) * .11); width: calc(44px * var(--k)); rotate: -33deg; }
+.part svg { filter: drop-shadow(1.5px 1.5px 0 rgba(40, 53, 47, .14)); }
 .item-keyboard { left: 24%; bottom: calc(var(--desk-h) * .14); width: calc(244px * var(--k)); }
 .item-mouse { left: 47.6%; bottom: calc(var(--desk-h) * .18); width: calc(46px * var(--k)); rotate: 8deg; }
 .mouse-cord { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
@@ -622,6 +630,8 @@ h2[tabindex="-1"]:focus { outline: none; }
   .hero { --k: .85; --desk-h: clamp(128px, 16vh, 166px); }
   .item-board { left: 79%; }
   .item-nameplate { left: 53.5%; }
+  .item-keyboard { left: 25.6%; }
+  .item-mouse { left: 49.6%; }
 }
 @media (max-width: 760px) {
   .hero { min-height: 0; }
@@ -633,7 +643,7 @@ h2[tabindex="-1"]:focus { outline: none; }
 }
 @media (max-width: 560px) {
   .hero { --k: .72; --desk-h: 140px; }
-  .item-mouse, .item-board, .item-nameplate, .shelf-plant, .item-parts { display: none; }
+  .item-mouse, .item-board, .item-nameplate, .shelf-plant, .item-parts, .part { display: none; }
   .item-breadboard { left: 2%; }
   .item-keyboard { left: 49.5%; width: 49%; }
   .item-pup { left: 74%; }
@@ -1384,8 +1394,33 @@ legend { font-weight: 700; margin-bottom: 8px; padding: 0; }
 }
 
 /* ---------- Experience ---------- */
-.timeline { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 20px; }
-.role { display: grid; grid-template-columns: 11em 1fr; gap: 24px; align-items: start; }
+.timeline { position: relative; list-style: none; padding: 0 0 0 48px; margin: 32px 0 0; display: grid; gap: 36px; }
+.timeline::before { /* the line down the left */
+  content: "";
+  position: absolute;
+  left: 14px; top: 10px; bottom: 10px;
+  width: 3px;
+  background: var(--line-strong);
+  border-radius: 2px;
+}
+.role { position: relative; display: grid; grid-template-columns: 11em 1fr; gap: 24px; align-items: start; }
+.role::before { /* the marker on the line */
+  content: "";
+  position: absolute;
+  left: -42px; top: 22px;
+  width: 16px; height: 16px;
+  background: var(--cream);
+  border: 3px solid var(--ink);
+  border-radius: 3px;
+}
+/* With JS: one entry in focus (nearest the middle of the screen), the rest greyed out.
+   Hovering or focusing a greyed entry brings it back. */
+.timeline.is-enhanced .role { opacity: .45; filter: grayscale(1); transition: opacity .35s ease, filter .35s ease, transform .35s ease; }
+.timeline.is-enhanced .role.is-active,
+.timeline.is-enhanced .role:hover,
+.timeline.is-enhanced .role:focus-within { opacity: 1; filter: none; }
+.timeline.is-enhanced .role.is-active { transform: translateX(4px); }
+.timeline.is-enhanced .role.is-active::before { background: var(--sage-deep); box-shadow: 0 0 0 5px rgba(59, 94, 61, .18); }
 .role-when {
   font-family: var(--font-mono);
   font-size: .85rem;
@@ -1837,6 +1872,7 @@ html:not(.js) .carousel-progress { display: none; }
   .qa-toast { transition: none; transform: none; }
   .qa-bang, .qa-bang::after, .qa-bang > span { animation: none !important; transition: none; }
   .flip-inner { transition: none; }
+  .timeline.is-enhanced .role { transition: none; transform: none; }
   .desk-bug *, .desk-bug { animation: none !important; }
   .term-cursor { animation: none; }
   .catch-check, .jar-bug.is-new, .jar-bug.is-escaping { animation: none; }
