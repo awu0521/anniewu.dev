@@ -39,98 +39,100 @@
     <div class="wrap">
       <article class="scenario scenario-page" id="scenario-robot" aria-labelledby="robot-title" data-scenario="robot">
         <header class="scenario-head">
-          <p class="scenario-num">Bug 3 of 3 · inspired by <a href="../index.html#project-hatric">HATRIC</a>, the trivia robot I’m building</p>
+          <p class="scenario-num">Bug 3 of 3 · inspired by <a href="../index.html#projects">HATRIC</a>, the trivia robot I’m building</p>
           <h1 id="robot-title">“Everyone deserves a turn.”</h1>
-          <p class="scenario-problem">A trivia robot is hosting three players. Its turn-taking rule always picks whoever sits in Seat 1, so one person answers every question while the others wait. It even asks Seat 1 when nobody is sitting there.</p>
+          <p class="scenario-problem">A trivia robot is hosting three players. After 6 questions, Juniper has answered all 6 and nobody else has had a turn.</p>
         </header>
 
-        <noscript><p class="pg-error">This demo needs JavaScript. The rest of the portfolio works without it.</p></noscript>
+        <noscript><p class="pg-error">The quiz needs JavaScript. The rest of the portfolio works without it.</p></noscript>
 
-        <div class="scenario-grid">
-          <div class="scenario-controls controls-run">
-            <fieldset>
-              <legend>1. Who’s at the table? <span class="legend-note">(fictional players)</span></legend>
-              <div class="check-list" data-player-toggles></div>
-            </fieldset>
-            <div class="control-row">
-              <button class="btn btn-primary" type="button" data-action="turn">Run 1 turn</button>
-              <button class="btn btn-secondary" type="button" data-action="turns">Run 6 turns</button>
-            </div>
-          </div>
-
-          <div class="scenario-output">
+        <div class="quiz-grid">
+          <div class="quiz-scene">
             <figure class="scene-frame table-scene">
               <svg class="scene robot-scene" viewBox="-20 -10 400 320" role="img" aria-labelledby="robot-scene-title">
-                  <title id="robot-scene-title">An original illustrated robot sitting behind a round table, with three fictional players: Juniper in seat 1 on the left, Ollie in seat 2 at the front, and Sam in seat 3 on the right.</title>
-                  <rect x="-20" y="-10" width="400" height="320" fill="#DCECF4"/>
-                  <g fill="#CBDFEA"><rect x="20" y="30" width="12" height="12"/><rect x="40" y="52" width="8" height="8"/><rect x="318" y="24" width="10" height="10"/><rect x="300" y="44" width="6" height="6"/></g>
-                  <g transform="translate(276 64)"><rect width="56" height="40" rx="3" fill="#FFFDF9" stroke="#28352F" stroke-width="2"/><path d="M8 12h40M8 20h28M8 28h34" stroke="#A9CDE0" stroke-width="2"/></g>
-                  <text x="304" y="120" text-anchor="middle" class="scene-label">QUESTION CARDS</text>
-                  <!-- robot (drawn first so the table hides its base) -->
-                  <g class="robot" data-robot>
-                    <rect x="150" y="116" width="60" height="64" rx="6" fill="#DCECF4" stroke="#28352F" stroke-width="2.5"/>
-                    <rect x="164" y="128" width="32" height="16" rx="2" fill="#FFF9F1" stroke="#28352F" stroke-width="2"/>
-                    <g class="robot-head" data-robot-head>
-                      <rect x="140" y="58" width="80" height="56" rx="8" fill="#E9E1F3" stroke="#28352F" stroke-width="2.5"/>
-                      <rect x="150" y="68" width="60" height="36" rx="4" fill="#28352F"/>
-                      <g data-robot-eyes>
-                        <rect x="160" y="80" width="12" height="12" rx="1" fill="#DCECF4"/>
-                        <rect x="188" y="80" width="12" height="12" rx="1" fill="#DCECF4"/>
-                      </g>
-                      <line x1="180" y1="58" x2="180" y2="44" stroke="#28352F" stroke-width="2.5"/>
-                      <rect x="173" y="34" width="14" height="12" fill="#F5D9C6" stroke="#28352F" stroke-width="2"/>
+                <title id="robot-scene-title">A robot behind a round table with three players: Juniper in seat 1 on the left, Ollie in seat 2 at the front, and Sam in seat 3 on the right. Before the fix the robot always looks at Juniper; after the fix it takes turns.</title>
+                <rect x="-20" y="-10" width="400" height="320" fill="#DCECF4"/>
+                <g fill="#CBDFEA"><rect x="20" y="30" width="12" height="12"/><rect x="40" y="52" width="8" height="8"/><rect x="318" y="24" width="10" height="10"/><rect x="300" y="44" width="6" height="6"/></g>
+                <g transform="translate(276 64)"><rect width="56" height="40" rx="3" fill="#FFFDF9" stroke="#28352F" stroke-width="2"/><path d="M8 12h40M8 20h28M8 28h34" stroke="#A9CDE0" stroke-width="2"/></g>
+                <text x="304" y="120" text-anchor="middle" class="scene-label">QUESTION CARDS</text>
+                <!-- robot (drawn first so the table hides its base) -->
+                <g class="robot">
+                  <rect x="150" y="116" width="60" height="64" rx="6" fill="#DCECF4" stroke="#28352F" stroke-width="2.5"/>
+                  <rect x="164" y="128" width="32" height="16" rx="2" fill="#FFF9F1" stroke="#28352F" stroke-width="2"/>
+                  <g class="robot-head">
+                    <rect x="140" y="58" width="80" height="56" rx="8" fill="#E9E1F3" stroke="#28352F" stroke-width="2.5"/>
+                    <rect x="150" y="68" width="60" height="36" rx="4" fill="#28352F"/>
+                    <g class="robot-eyes">
+                      <rect x="160" y="80" width="12" height="12" rx="1" fill="#DCECF4"/>
+                      <rect x="188" y="80" width="12" height="12" rx="1" fill="#DCECF4"/>
                     </g>
+                    <line x1="180" y1="58" x2="180" y2="44" stroke="#28352F" stroke-width="2.5"/>
+                    <rect x="173" y="34" width="14" height="12" fill="#F5D9C6" stroke="#28352F" stroke-width="2"/>
                   </g>
-                  <ellipse cx="180" cy="190" rx="134" ry="36" fill="#DCE8D6"/>
-                  <ellipse cx="180" cy="184" rx="134" ry="36" fill="#EEF4EA" stroke="#28352F" stroke-width="2"/>
-                  <rect x="196" y="172" width="16" height="12" fill="#F5D9C6" stroke="#28352F" stroke-width="1.5" transform="rotate(-8 204 178)"/>
-                  <!-- players -->
-                  <g class="seat" data-seat="0" transform="translate(50 196)">
-                    <circle r="24" fill="#F5D9C6" stroke="#28352F" stroke-width="2"/>
-                    <rect x="-18" y="-26" width="36" height="12" fill="#28352F"/>
-                    <circle cx="-7" cy="-2" r="2.5" fill="#28352F"/><circle cx="7" cy="-2" r="2.5" fill="#28352F"/>
-                    <path d="M-6 8q6 5 12 0" stroke="#28352F" stroke-width="2" fill="none"/>
-                    <text y="44" text-anchor="middle" class="seat-label">1 · Juniper</text>
-                  </g>
-                  <g class="seat" data-seat="1" transform="translate(180 244)">
-                    <circle r="24" fill="#E9E1F3" stroke="#28352F" stroke-width="2"/>
-                    <rect x="-20" y="-24" width="40" height="10" fill="#6B4E3D"/><rect x="-20" y="-14" width="8" height="12" fill="#6B4E3D"/><rect x="12" y="-14" width="8" height="12" fill="#6B4E3D"/>
-                    <circle cx="-7" cy="-2" r="2.5" fill="#28352F"/><circle cx="7" cy="-2" r="2.5" fill="#28352F"/>
-                    <path d="M-6 8q6 5 12 0" stroke="#28352F" stroke-width="2" fill="none"/>
-                    <text y="44" text-anchor="middle" class="seat-label">2 · Ollie</text>
-                  </g>
-                  <g class="seat" data-seat="2" transform="translate(310 196)">
-                    <circle r="24" fill="#DCECF4" stroke="#28352F" stroke-width="2"/>
-                    <rect x="-16" y="-26" width="32" height="10" fill="#C98F5E"/><rect x="10" y="-18" width="10" height="10" fill="#C98F5E"/>
-                    <circle cx="-7" cy="-2" r="2.5" fill="#28352F"/><circle cx="7" cy="-2" r="2.5" fill="#28352F"/>
-                    <path d="M-6 8q6 5 12 0" stroke="#28352F" stroke-width="2" fill="none"/>
-                    <text y="44" text-anchor="middle" class="seat-label">3 · Sam</text>
-                  </g>
-                </svg>
-              <p class="speech" data-speech>Hi! I’m a pretend trivia host. Press “Run 1 turn” to ask a question.</p>
+                </g>
+                <ellipse cx="180" cy="190" rx="134" ry="36" fill="#DCE8D6"/>
+                <ellipse cx="180" cy="184" rx="134" ry="36" fill="#EEF4EA" stroke="#28352F" stroke-width="2"/>
+                <rect x="196" y="172" width="16" height="12" fill="#F5D9C6" stroke="#28352F" stroke-width="1.5" transform="rotate(-8 204 178)"/>
+                <!-- players -->
+                <g class="seat" data-seat="0" transform="translate(50 196)">
+                  <circle r="24" fill="#F5D9C6" stroke="#28352F" stroke-width="2"/>
+                  <rect x="-18" y="-26" width="36" height="12" fill="#28352F"/>
+                  <circle cx="-7" cy="-2" r="2.5" fill="#28352F"/><circle cx="7" cy="-2" r="2.5" fill="#28352F"/>
+                  <path d="M-6 8q6 5 12 0" stroke="#28352F" stroke-width="2" fill="none"/>
+                  <text y="44" text-anchor="middle" class="seat-label">1 · Juniper</text>
+                </g>
+                <g class="seat" data-seat="1" transform="translate(180 244)">
+                  <circle r="24" fill="#E9E1F3" stroke="#28352F" stroke-width="2"/>
+                  <rect x="-20" y="-24" width="40" height="10" fill="#6B4E3D"/><rect x="-20" y="-14" width="8" height="12" fill="#6B4E3D"/><rect x="12" y="-14" width="8" height="12" fill="#6B4E3D"/>
+                  <circle cx="-7" cy="-2" r="2.5" fill="#28352F"/><circle cx="7" cy="-2" r="2.5" fill="#28352F"/>
+                  <path d="M-6 8q6 5 12 0" stroke="#28352F" stroke-width="2" fill="none"/>
+                  <text y="44" text-anchor="middle" class="seat-label">2 · Ollie</text>
+                </g>
+                <g class="seat" data-seat="2" transform="translate(310 196)">
+                  <circle r="24" fill="#DCECF4" stroke="#28352F" stroke-width="2"/>
+                  <rect x="-16" y="-26" width="32" height="10" fill="#C98F5E"/><rect x="10" y="-18" width="10" height="10" fill="#C98F5E"/>
+                  <circle cx="-7" cy="-2" r="2.5" fill="#28352F"/><circle cx="7" cy="-2" r="2.5" fill="#28352F"/>
+                  <path d="M-6 8q6 5 12 0" stroke="#28352F" stroke-width="2" fill="none"/>
+                  <text y="44" text-anchor="middle" class="seat-label">3 · Sam</text>
+                </g>
+              </svg>
+              <p class="speech"><span class="quiz-bug">“Juniper, here’s question 6!” (again)</span><span class="quiz-fix">“Sam, here’s question 6!”</span></p>
             </figure>
-            <ul class="turn-bars" data-turn-bars aria-label="Turns per player"></ul>
-            <p class="feedback" data-feedback role="status" aria-live="polite"></p>
-            <div class="compare" data-compare></div>
+            <p class="turn-bars-title">Turns after 6 questions</p>
+            <ul class="turn-bars" aria-label="Turns per player after 6 questions">
+              <li><span>1 · Juniper</span><span class="bar"><i class="quiz-bug" style="width:100%"></i><i class="quiz-fix" style="width:33.3%"></i></span><span class="num"><span class="quiz-bug">6</span><span class="quiz-fix">2</span></span></li>
+              <li><span>2 · Ollie</span><span class="bar"><i class="quiz-bug" style="width:0"></i><i class="quiz-fix" style="width:33.3%"></i></span><span class="num"><span class="quiz-bug">0</span><span class="quiz-fix">2</span></span></li>
+              <li><span>3 · Sam</span><span class="bar"><i class="quiz-bug" style="width:0"></i><i class="quiz-fix" style="width:33.3%"></i></span><span class="num"><span class="quiz-bug">0</span><span class="quiz-fix">2</span></span></li>
+            </ul>
           </div>
 
-          <div class="scenario-controls controls-rule">
-            <fieldset>
-              <legend>2. Choose the selection rule</legend>
-              <div class="radio-list">
-                <label class="radio"><input type="radio" name="robot-rule" value="first" checked> <span><strong>Always pick Seat 1</strong><small>Ignores who’s at the table and how many turns anyone has had.</small></span></label>
-                <label class="radio"><input type="radio" name="robot-rule" value="fair"> <span><strong>Fewest turns first</strong><small>Picks a player at the table with the fewest turns. Ties go to whoever has waited longest, then to the lowest seat number.</small></span></label>
+          <div class="quiz-panel">
+            <div class="code-card">
+              <p class="code-card-head"><span>robot.pseudo</span><span data-code-title>the buggy code</span></p>
+              <pre class="code quiz-bug"><code><span class="ln">when it’s time for a question:</span><span class="ln is-bug">    pick the player in seat 1</span><span class="ln">    ask them the question</span><span class="ln">    add 1 to their turn count</span></code></pre>
+              <pre class="code quiz-fix"><code><span class="ln">when it’s time for a question:</span><span class="ln is-new">    pick the player with the fewest turns</span><span class="ln is-new">    (if it’s a tie, the lowest seat number)</span><span class="ln">    ask them the question</span><span class="ln">    add 1 to their turn count</span></code></pre>
+            </div>
+
+            <fieldset class="quiz">
+              <legend>Which change fixes it?</legend>
+              <div class="quiz-options">
+                <button class="quiz-option" type="button" data-option data-why="Now Ollie answers every question instead. It’s the same bug in a different seat.">Pick the player in seat 2 instead</button>
+                <button class="quiz-option" type="button" data-option data-why="Asking faster doesn’t change who gets picked. Juniper still gets every question.">Ask the questions faster</button>
+                <button class="quiz-option" type="button" data-option data-why="Random picks can still choose the same person many times in a row, so it isn’t guaranteed to be fair.">Pick a random seat each time</button>
+                <button class="quiz-option" type="button" data-option data-correct data-why="Whoever has had the fewest turns goes next, so turns rotate evenly: Juniper, Ollie, Sam, Juniper, Ollie, Sam.">Pick the player with the fewest turns so far</button>
               </div>
             </fieldset>
-            <button class="btn btn-ghost" type="button" data-action="reset">Reset this demo</button>
+            <p class="feedback" data-feedback role="status" aria-live="polite"></p>
+            <button class="btn btn-ghost" type="button" data-quiz-reset hidden>Try it again</button>
           </div>
         </div>
 
-        <section class="explain-section" aria-labelledby="robot-note">
-          <h2 id="robot-note">What’s going on here?</h2>
-          <p>This is a <strong>selection rule</strong>: given the current state (who’s present and how many turns each has had), pick the next person to address. The flawed rule is a constant: it returns Seat 1 no matter what. The fixed rule filters to eligible players, sorts by fewest turns, breaks ties by longest wait and then seat number, and takes the first result. Because the tie-break is deterministic, the same state always produces the same choice, which makes the behavior easy to explain and test.</p>
-          <p class="disclaimer"><strong>Honest label:</strong> this is a scripted simulation. It is not a live language model and not a reproduction of HATRIC, where these decisions come from an LLM agent working with vision input. It just shows why “who hasn’t spoken yet?” is worth encoding explicitly.</p>
-          <p><a href="../index.html#project-hatric">Read about HATRIC</a></p>
+        <section class="explain-section" aria-label="About this bug">
+          <h2 class="quiz-bug">About this demo</h2>
+          <h2 class="quiz-fix">What was the bug?</h2>
+          <p class="quiz-fix">The robot’s rule ignored everything about the game and always returned seat 1. The fix looks at how many turns each player has had and picks whoever is furthest behind, so everyone gets an even share.</p>
+          <p class="disclaimer"><strong>Honest label:</strong> a scripted simulation, not a live language model and not HATRIC’s real code. In HATRIC these decisions come from an LLM agent working with vision input.</p>
+          <p><a href="../index.html#projects">Read about HATRIC</a></p>
         </section>
       </article>
 
