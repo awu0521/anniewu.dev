@@ -3,13 +3,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Annie Wu — CS @ UBC</title>
+  <title>Annie Wu — Computer Science @ UBC | Software Developer, Vancouver</title>
+  <link rel="canonical" href="https://anniewu.dev/">
   <meta name="description" content="Annie Wu is a third-year Computer Science (Co-op) student at UBC who builds thoughtful systems that connect people, data, and the world outside. Includes a small, optional Debug Playground.">
   <meta name="author" content="Annie Wu">
   <meta name="theme-color" content="#FFF9F1">
-  <meta property="og:title" content="Annie Wu — The Portfolio You Can Debug">
+  <meta property="og:title" content="Annie Wu — Computer Science @ UBC | Software Developer, Vancouver">
   <meta property="og:description" content="Third-year CS student at UBC. I build thoughtful systems that connect people, data, and the world outside.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anniewu.dev/">
+  <!-- TODO(Annie): create a 1200x630 share image at assets/og.jpg — there isn't one yet, so link previews show no image until it exists. -->
+  <meta property="og:image" content="https://anniewu.dev/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Annie Wu, Computer Science (Co-op) student at UBC">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Annie Wu — Computer Science @ UBC | Software Developer, Vancouver">
+  <meta name="twitter:description" content="Third-year CS student at UBC. I build thoughtful systems that connect people, data, and the world outside.">
+  <meta name="twitter:image" content="https://anniewu.dev/assets/og.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Annie Wu",
+    "url": "https://anniewu.dev/",
+    "jobTitle": "Computer Science (Co-op) Student",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of British Columbia",
+      "sameAs": "https://www.ubc.ca/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vancouver",
+      "addressRegion": "BC",
+      "addressCountry": "CA"
+    },
+    "sameAs": [
+      "https://github.com/awu0521",
+      "https://www.linkedin.com/in/annie-wu06"
+    ],
+    "knowsAbout": [
+      "Python", "Java", "C++", "C", "JavaScript", "TypeScript", "SQL", "R",
+      "FastAPI", "SQLite", "WebSockets", "React", "Next.js", "Expo", "Firebase", "HTML", "CSS", "Git",
+      "Large language models", "Vision-language models", "Prompt engineering", "Agent orchestration",
+      "Object-oriented programming", "Client-server architecture", "Embedded systems", "ESP32", "RFID",
+      "Elo ratings", "Monte Carlo simulation", "Ollama", "REDCap", "Power Automate", "Figma"
+    ]
+  }
+  </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20261107v">
   <script>document.documentElement.classList.add('js');</script>
@@ -227,7 +269,7 @@
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="wrap">
         <p class="section-kicker"><span class="block-dot" aria-hidden="true"></span>01 · About me</p>
-        <h2 id="about-title">Hi, I’m Annie.</h2>
+        <h2 id="about-title">Hi, I’m Annie Wu.</h2>
         <div class="about-grid">
           <div class="about-text">
             <p>I’m a third-year Computer Science student in the Co-op program at the University of British Columbia. I like problems that sit between people and systems: a robot deciding who to talk to, a sensor turning a physical object into a record, a model that has to be honest about what it knows.</p>
@@ -439,7 +481,93 @@
                   </div>
                 </div>
               </div>
-              <!-- project leaves are added here by script.js -->
+              <!-- project leaves: real HTML so the text is in the page source; script.js turns them -->
+              <div class="pb-leaf" data-pb-leaf>
+                <div class="pb-face pb-front pb-paper pb-paper-right" data-pb-face>
+                  <div class="pb-content">
+                    <p class="pb-page-num">01 / 06</p>
+                    <div class="book-project-head"><h3>HATRIC: LLM/VLM Trivia Robot</h3><span class="status status-progress">In progress</span></div>
+                    <p class="book-meta">Oct 2026 – present</p>
+                    <dl class="book-dl">
+                      <dt>The problem</dt><dd>A robot hosting a game for several people has to decide who to address, where to look, and how to gesture — not just what to say.</dd>
+                      <dt>What I'm doing</dt><dd>Multi-party LLM agent in async Python; on-device VLM via Ollama reads webcam frames to steer gaze; FastAPI/WebSocket server with SQLite drives a web avatar and an ESP32.</dd>
+                      <dt>Currently working with</dt><dd><ul class="chips"><li>Python</li><li>Ollama</li><li>FastAPI</li><li>WebSockets</li><li>SQLite</li><li>ESP32</li></ul></dd>
+                    </dl>
+                  </div>
+                </div>
+                <div class="pb-face pb-back pb-paper pb-paper-left" data-pb-face>
+                  <div class="pb-content">
+                    <p class="pb-page-num">02 / 06</p>
+                    <div class="book-project-head"><h3>IoT Inventory Tracker</h3><span class="status status-done">Built</span></div>
+                    <p class="book-meta">Jun – Aug 2026</p>
+                    <dl class="book-dl">
+                      <dt>The problem</dt><dd>Logging physical items by hand is slow and error-prone.</dd>
+                      <dt>What I did</dt><dd>ESP32 reads RFID tags in real time; client-server over WiFi turns each scan into a structured inventory record.</dd>
+                      <dt>Built with</dt><dd><ul class="chips"><li>C++</li><li>Arduino</li><li>ESP32</li><li>RFID</li><li>TypeScript</li></ul></dd>
+                      <dt>Outcome</dt><dd>A working hardware-to-software pipeline.</dd>
+                    </dl>
+                    <div class="book-links"><a class="btn btn-small" href="https://github.com/awu0521/inventory-tracker" target="_blank" rel="noopener">GitHub</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="pb-leaf" data-pb-leaf>
+                <div class="pb-face pb-front pb-paper pb-paper-right" data-pb-face>
+                  <div class="pb-content">
+                    <p class="pb-page-num">03 / 06</p>
+                    <div class="book-project-head"><h3>FIFA 2026 Tracker and Predictor</h3><span class="status status-done">Built</span></div>
+                    <p class="book-meta">Jun – Jul 2026</p>
+                    <dl class="book-dl">
+                      <dt>The problem</dt><dd>Forecast the 2026 World Cup winner without fooling myself about accuracy.</dd>
+                      <dt>What I did</dt><dd>Python engine: Elo ratings seeded from FIFA rankings + 200,000 Monte Carlo simulations of the remaining bracket.</dd>
+                      <dt>Built with</dt><dd><ul class="chips"><li>Python</li><li>Elo ratings</li><li>Monte Carlo simulation</li></ul></dd>
+                      <dt>How I checked it</dt><dd><p class="stat"><span class="stat-num">83.8%</span> <span class="stat-label">of decisive matches called correctly</span></p></dd>
+                    </dl>
+                    <div class="book-links"><a class="btn btn-small" href="https://github.com/awu0521/fifa2026" target="_blank" rel="noopener">GitHub</a></div>
+                  </div>
+                </div>
+                <div class="pb-face pb-back pb-paper pb-paper-left" data-pb-face>
+                  <div class="pb-content">
+                    <p class="pb-page-num">04 / 06</p>
+                    <div class="book-project-head"><h3>TrackTheTrek</h3><span class="status status-done">Built</span></div>
+                    <p class="book-meta">Jul – Sep 2025</p>
+                    <dl class="book-dl">
+                      <dt>The problem</dt><dd>I wanted a simple way to keep track of hikes around BC.</dd>
+                      <dt>What I did</dt><dd>Java desktop hiking tracker with an OOP class hierarchy; hikes saved to/loaded from JSON so the trail log persists between sessions.</dd>
+                      <dt>Built with</dt><dd><ul class="chips"><li>Java</li><li>OOP</li><li>JSON persistence</li></ul></dd>
+                      <dt>Outcome</dt><dd>A desktop app whose trail log is still there the next time it opens.</dd>
+                    </dl>
+                    <div class="book-links"><a class="btn btn-small" href="https://github.com/awu0521/TrackTheTrek" target="_blank" rel="noopener">GitHub</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="pb-leaf" data-pb-leaf>
+                <div class="pb-face pb-front pb-paper pb-paper-right" data-pb-face>
+                  <div class="pb-content">
+                    <p class="pb-page-num">05 / 06</p>
+                    <div class="book-project-head"><h3>Save Our Foods</h3><span class="status status-done">Built</span></div>
+                    <p class="book-meta">2025 · Hackathon</p>
+                    <dl class="book-dl">
+                      <dt>The problem</dt><dd>Food waste from near-expiry items that never get sold or used.</dd>
+                      <dt>What I did</dt><dd>Full-stack Next.js marketplace where sellers list near-expiry food; Gemini AI reads item photos to suggest names, expiry dates, and fair prices; buyers get a PDF receipt on checkout.</dd>
+                      <dt>Built with</dt><dd><ul class="chips"><li>Next.js</li><li>Supabase</li><li>Gemini AI</li><li>TypeScript</li></ul></dd>
+                    </dl>
+                    <div class="book-links"><a class="btn btn-small" href="https://github.com/hackscholar/save-our-foods" target="_blank" rel="noopener">GitHub</a></div>
+                  </div>
+                </div>
+                <div class="pb-face pb-back pb-paper pb-paper-left" data-pb-face>
+                  <div class="pb-content">
+                    <p class="pb-page-num">06 / 06</p>
+                    <div class="book-project-head"><h3>How Cooked Are You?</h3><span class="status status-done">Built</span></div>
+                    <p class="book-meta">2025 · Hackathon</p>
+                    <dl class="book-dl">
+                      <dt>The problem</dt><dd>UBC CS students need a fun, honest way to gauge how overwhelmed they are by upcoming deadlines.</dd>
+                      <dt>What I did</dt><dd>Next.js web app: enter assignments with weights and due dates (or import a .ics schedule), get a “how cooked” score, an auto-generated study schedule, and an .ics export for Google/Apple/Outlook Calendar.</dd>
+                      <dt>Built with</dt><dd><ul class="chips"><li>Next.js</li><li>TypeScript</li><li>iCal</li></ul></dd>
+                    </dl>
+                    <div class="book-links"><a class="btn btn-small" href="https://github.com/awu0521/how-cooked-are-you" target="_blank" rel="noopener">GitHub</a></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -556,6 +684,6 @@
     <span class="visually-hidden" data-bang-label>Open Mr. Oli’s QA report</span>
   </button>
 
-  <script src="script.js?v=20261107v" defer></script>
+  <script src="script.js?v=20261110a" defer></script>
 </body>
 </html>
